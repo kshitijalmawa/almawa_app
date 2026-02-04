@@ -1,6 +1,9 @@
 import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/screens/our_service_drawer_screen.dart';
 import 'package:almawa_app/screens/our_work_screen.dart';
+import 'package:almawa_app/testimonials/directors_desk.dart';
+import 'package:almawa_app/testimonials/testimonials.dart';
+import 'package:almawa_app/widget/service_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -259,836 +262,101 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 18, color: Colors.black87),
                 ),
               ),
-              //card
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blue,
-                        blurRadius: 2,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 56,
-                        width: 56,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF2D9CFF), Color(0xFF00C2FF)],
-                          ),
-                        ),
-                        child: const Icon(
-                          Icons.code,
-                          color: Colors.white,
-                          size: 28,
-                        ),
-                      ),
-
-                      const SizedBox(height: 20),
-
-                      const Text(
-                        "Web Development",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-
-                      const Text(
-                        "Creating modern, responsive websites and web applications that drive business growth and user engagement.",
-                        style: TextStyle(
-                          fontSize: 15,
-                          height: 1.6,
-                          color: Colors.black54,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2D9CFF)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Website Design",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2D9CFF)),
-                          SizedBox(width: 10),
-                          Text(
-                            "E-commerce Development",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2D9CFF)),
-                          SizedBox(width: 10),
-                          Text("Web Hosting", style: TextStyle(fontSize: 14)),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2D9CFF)),
-                          SizedBox(width: 10),
-                          Text(
-                            "SEO Integration",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-
-                      const SizedBox(height: 20),
-
-                      Center(
-                        child: SizedBox(
-                          height: 44,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              //Navigation
-                            },
-                            style: ElevatedButton.styleFrom(
-                              minimumSize: Size(250, 40),
-                              backgroundColor: const Color(0xFFF2F2F2),
-                              elevation: 0,
-                              shadowColor: Colors.transparent,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 32,
-                              ),
-                            ),
-                            child: const Text(
-                              "Learn more",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              ServiceCardWidget(
+                icon: Icons.code,
+                iconColor: const Color(0xFF2D9CFF),
+                title: "Web Development",
+                description:
+                    "Creating modern, responsive websites and web applications that drive business growth and engagement.",
+                points: const [
+                  "Website Design",
+                  "E-commerce Development",
+                  "Web Hosting",
+                  "SEO Integration",
+                ],
+                onTap: () {},
               ),
-              SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blueGrey,
-                        blurRadius: 2,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 56,
-                        width: 56,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: Colors.blueGrey,
-                        ),
-                        child: const Icon(
-                          Icons.code,
-                          color: Colors.white,
-                          size: 28,
-                        ),
-                      ),
 
-                      const SizedBox(height: 20),
-
-                      const Text(
-                        "IT & Tech Services",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-
-                      const Text(
-                        "Comprehensive IT solutions including infrastructure, cybersecurity for you business",
-                        style: TextStyle(
-                          fontSize: 15,
-                          height: 1.6,
-                          color: Colors.black54,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Colors.blueGrey),
-                          SizedBox(width: 10),
-                          Text(
-                            "Infrastructure Services",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Colors.blueGrey),
-                          SizedBox(width: 10),
-                          Text("Cybersecurity", style: TextStyle(fontSize: 14)),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Colors.blueGrey),
-                          SizedBox(width: 10),
-                          Text("Managed IT ", style: TextStyle(fontSize: 14)),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Colors.blueGrey),
-                          SizedBox(width: 10),
-                          Text(
-                            "Cloud Solutions",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-
-                      const SizedBox(height: 20),
-
-                      Center(
-                        child: SizedBox(
-                          height: 44,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              //Navigation
-                            },
-                            style: ElevatedButton.styleFrom(
-                              minimumSize: Size(250, 40),
-                              backgroundColor: const Color(0xFFF2F2F2),
-                              elevation: 0,
-                              shadowColor: Colors.transparent,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 32,
-                              ),
-                            ),
-                            child: const Text(
-                              "Learn more",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              // ✅ IT Services Card
+              ServiceCardWidget(
+                icon: Icons.settings,
+                iconColor: Colors.blueGrey,
+                title: "IT & Tech Services",
+                description:
+                    "Comprehensive IT solutions including infrastructure, cybersecurity and cloud support.",
+                points: const [
+                  "Infrastructure Services",
+                  "Cybersecurity",
+                  "Managed IT",
+                  "Cloud Solutions",
+                ],
+                onTap: () {},
               ),
-              SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.green,
-                        blurRadius: 2,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 56,
-                        width: 56,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: const Color(0xFF19C37D),
-                        ),
-                        child: const Icon(
-                          Icons.campaign,
-                          color: Colors.white,
-                          size: 28,
-                        ),
-                      ),
 
-                      const SizedBox(height: 20),
-
-                      const Text(
-                        "Digital Marketing",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-
-                      const Text(
-                        "Strategic digital marketing campaigns including email, WhatsApp, and SMS marketing to boost your reach.",
-                        style: TextStyle(
-                          fontSize: 15,
-                          height: 1.6,
-                          color: Colors.black54,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF19C37D)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Email Marketing",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF19C37D)),
-                          SizedBox(width: 10),
-                          Text(
-                            "WhatsApp Marketing",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF19C37D)),
-                          SizedBox(width: 10),
-                          Text("SMS Campaigns", style: TextStyle(fontSize: 14)),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF19C37D)),
-                          SizedBox(width: 10),
-                          Text("Analytics", style: TextStyle(fontSize: 14)),
-                        ],
-                      ),
-
-                      const SizedBox(height: 20),
-
-                      Center(
-                        child: SizedBox(
-                          height: 44,
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              // navigation
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFF2F2F2),
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                            ),
-                            child: const Text(
-                              "Learn more",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              // ✅ Digital Marketing Card
+              ServiceCardWidget(
+                icon: Icons.campaign,
+                iconColor: const Color(0xFF19C37D),
+                title: "Digital Marketing",
+                description:
+                    "Strategic marketing campaigns including email, WhatsApp and SMS marketing.",
+                points: const [
+                  "Email Marketing",
+                  "WhatsApp Marketing",
+                  "SMS Campaigns",
+                  "Analytics",
+                ],
+                onTap: () {},
               ),
-              SizedBox(height: 12),
-              SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.pink.shade200,
-                        blurRadius: 2,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Icon
-                      Container(
-                        height: 56,
-                        width: 56,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: Colors.pink.shade200,
-                        ),
-                        child: const Icon(
-                          Icons.brush,
-                          color: Colors.white,
-                          size: 28,
-                        ),
-                      ),
 
-                      const SizedBox(height: 20),
-
-                      // Title
-                      const Text(
-                        "Graphic Design",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-
-                      // Description
-                      const Text(
-                        "Professional branding and graphic design services to create compelling visual identities and marketing materials.",
-                        style: TextStyle(
-                          fontSize: 15,
-                          height: 1.6,
-                          color: Colors.black54,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      // Bullet points
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFFFF4D9D)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Brand Identity",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFFFF4D9D)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Marketing Design",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFFFF4D9D)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Digital Graphics",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFFFF4D9D)),
-                          SizedBox(width: 10),
-                          Text("Print Design", style: TextStyle(fontSize: 14)),
-                        ],
-                      ),
-
-                      const SizedBox(height: 20),
-
-                      // Button
-                      Center(
-                        child: SizedBox(
-                          height: 44,
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              // navigation
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFF2F2F2),
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                            ),
-                            child: const Text(
-                              "Learn more",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              // ✅ Graphic Design Card
+              ServiceCardWidget(
+                icon: Icons.brush,
+                iconColor: Colors.pinkAccent,
+                title: "Graphic Design",
+                description:
+                    "Professional branding and design services to create compelling visual identities.",
+                points: const [
+                  "Brand Identity",
+                  "Marketing Design",
+                  "Digital Graphics",
+                  "Print Design",
+                ],
+                onTap: () {},
               ),
-              SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color.fromARGB(255, 62, 82, 237),
-                        blurRadius: 2,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Icon
-                      Container(
-                        height: 56,
-                        width: 56,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: const Color.fromARGB(255, 62, 82, 237),
-                        ),
-                        child: const Icon(
-                          Icons.psychology,
-                          color: Colors.white,
-                          size: 28,
-                        ),
-                      ),
 
-                      const SizedBox(height: 20),
-
-                      // Title
-                      const Text(
-                        "AI Services",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-
-                      // Description
-                      const Text(
-                        "Cutting-edge artificial intelligence solutions including machine learning, automation, and data analytics to revolutionize your business.",
-                        style: TextStyle(
-                          fontSize: 15,
-                          height: 1.6,
-                          color: Colors.black54,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      // Bullet points
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF3D5AFE)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Machine Learning Solutions",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF3D5AFE)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Computer Vision Services",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF3D5AFE)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Generative AI Services",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF3D5AFE)),
-                          SizedBox(width: 10),
-                          Text(
-                            "AI Automation Services",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-
-                      const SizedBox(height: 20),
-
-                      // Button
-                      Center(
-                        child: SizedBox(
-                          height: 44,
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              // navigation
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFF2F2F2),
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                            ),
-                            child: const Text(
-                              "Learn more",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              // ✅ AI Services Card
+              ServiceCardWidget(
+                icon: Icons.psychology,
+                iconColor: const Color(0xFF3D5AFE),
+                title: "AI Services",
+                description:
+                    "Machine learning, automation and AI-powered solutions to modernize your business.",
+                points: const [
+                  "Machine Learning",
+                  "Computer Vision",
+                  "Generative AI",
+                  "AI Automation",
+                ],
+                onTap: () {},
               ),
-              SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blue.shade200,
-                        blurRadius: 2,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Icon
-                      Container(
-                        height: 56,
-                        width: 56,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: Colors.lightBlueAccent,
-                        ),
-                        child: const Icon(
-                          Icons.cloud_outlined,
-                          color: Colors.white,
-                          size: 28,
-                        ),
-                      ),
 
-                      const SizedBox(height: 20),
-
-                      // Title
-                      const Text(
-                        "Cloud Solutions",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-
-                      // Description
-                      const Text(
-                        "Scalable cloud infrastructure and services for modern applications, ensuring reliability, security, and cost efficiency.",
-                        style: TextStyle(
-                          fontSize: 15,
-                          height: 1.6,
-                          color: Colors.black54,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      // Bullet points
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2196F3)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Cloud Migration",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2196F3)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Cloud Infrastructure",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2196F3)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Disaster Recovery",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: const [
-                          Icon(Icons.circle, size: 8, color: Color(0xFF2196F3)),
-                          SizedBox(width: 10),
-                          Text(
-                            "Cloud Optimization",
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
-                      ),
-
-                      const SizedBox(height: 20),
-
-                      // Button
-                      Center(
-                        child: SizedBox(
-                          height: 44,
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              // navigation
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFF2F2F2),
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                            ),
-                            child: const Text(
-                              "Learn more",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              // ✅ Cloud Solutions Card
+              ServiceCardWidget(
+                icon: Icons.cloud_outlined,
+                iconColor: Colors.lightBlue,
+                title: "Cloud Solutions",
+                description:
+                    "Scalable cloud infrastructure ensuring reliability, security and cost efficiency.",
+                points: const [
+                  "Cloud Migration",
+                  "Cloud Infrastructure",
+                  "Disaster Recovery",
+                  "Cloud Optimization",
+                ],
+                onTap: () {},
               ),
+
               SizedBox(height: 36),
               const Text(
                 "VOICES FROM \nTHE DESK",
@@ -1322,7 +590,7 @@ class HomeScreen extends StatelessWidget {
                 'Our Services',
                 trailing: true,
                 onTap: () {
-                  Navigator.of(context).pop(); 
+                  Navigator.of(context).pop();
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -1339,13 +607,52 @@ class HomeScreen extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
               ),
-              _drawerItem(
-                Icons.chat_bubble_outline,
-                'Testimonials',
-                trailing: true,
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
+              ExpansionTile(
+                tilePadding: EdgeInsets.zero,
+                childrenPadding: const EdgeInsets.only(left: 55),
+
+                leading: const Icon(
+                  Icons.chat_bubble_outline,
+                  color: Colors.black87,
+                  size: 22,
+                ),
+
+                title: const Text(
+                  "Testimonials",
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+
+                trailing: const Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.black38,
+                ),
+
+                children: [
+                  _subDrawerItem(
+                    "Testimonials",
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Testimonials()),
+                      );
+                    },
+                  ),
+                  _subDrawerItem(
+                    "Directors Desk",
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DirectorsDesk(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
 
               const Spacer(),
@@ -1443,4 +750,25 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _subDrawerItem(String title, {VoidCallback? onTap}) {
+  return InkWell(
+    onTap: onTap,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 16,
+              color: Colors.black87,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }
