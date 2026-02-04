@@ -1,5 +1,8 @@
-import 'package:almawa_app/drawer_screens/it_and_tech_services.dart';
-import 'package:almawa_app/drawer_screens/web_devlopment_screen.dart';
+import 'package:almawa_app/our_services/ai_services.dart';
+import 'package:almawa_app/our_services/digital_marketing.dart';
+import 'package:almawa_app/our_services/graphic_design.dart';
+import 'package:almawa_app/our_services/it_and_tech_services.dart';
+import 'package:almawa_app/our_services/web_devlopment_screen.dart';
 import 'package:flutter/material.dart';
 
 class OurServicesDrawerScreen extends StatelessWidget {
@@ -67,15 +70,24 @@ class OurServicesDrawerScreen extends StatelessWidget {
               }),
 
               _serviceItem('Digital Marketing', () {
-                debugPrint('Digital Marketing tapped');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const DigitalMarketing()),
+                );
               }),
 
               _serviceItem('Graphic Design', () {
-                debugPrint('Graphic Design tapped');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const GraphicDesign()),
+                );
               }),
 
               _serviceItem('AI Services', () {
-                debugPrint('AI Services tapped');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AiServices()),
+                );
               }),
             ],
           ),
@@ -85,25 +97,25 @@ class OurServicesDrawerScreen extends StatelessWidget {
   }
 
   Widget _serviceItem(String title, VoidCallback onTap) {
-  return InkWell(
-    onTap: onTap,
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
-          const Icon(Icons.keyboard_arrow_down),
-        ],
+            const Icon(Icons.keyboard_arrow_down),
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/widget/benifit_item_card.dart';
 import 'package:almawa_app/widget/call_to_action_button.dart';
 import 'package:almawa_app/widget/service_card.dart';
@@ -321,15 +322,21 @@ class WebDevlopmentScreen extends StatelessWidget {
                     const SizedBox(height: 20),
 
                     CallToActionButtons(
+                      primaryText: 'Get Started Today',
+                      secondaryText: 'Learn More About Us',
                       onPrimaryTap: () {
-                        debugPrint('Get Started tapped');
+                        debugPrint('Consultation tapped');
                       },
                       onSecondaryTap: () {
-                        debugPrint('Learn More tapped');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const AboutScreen(),
+                          ),
+                        );  
                       },
                     ),
                     const SizedBox(height: 80),
-                    const SizedBox(height: 24),
                     Container(
                       width: double.infinity,
                       color: Colors.black,

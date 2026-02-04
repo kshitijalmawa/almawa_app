@@ -4,10 +4,15 @@ class CallToActionButtons extends StatelessWidget {
   final VoidCallback onPrimaryTap;
   final VoidCallback onSecondaryTap;
 
+  final String primaryText;
+  final String secondaryText;
+
   const CallToActionButtons({
     super.key,
     required this.onPrimaryTap,
     required this.onSecondaryTap,
+    this.primaryText = 'Get Started Today',
+    this.secondaryText = 'Learn More About Us',
   });
 
   @override
@@ -31,9 +36,12 @@ class CallToActionButtons extends StatelessWidget {
                   side: BorderSide(color: Colors.grey.shade300),
                 ),
               ),
-              child: const Text(
-                'Get Started Today',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              child: Text(
+                primaryText,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ),
@@ -54,9 +62,12 @@ class CallToActionButtons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: const Text(
-                'Learn More About Us',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              child: Text(
+                secondaryText,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ),
