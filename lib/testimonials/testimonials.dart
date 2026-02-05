@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Testimonials extends StatelessWidget {
   const Testimonials({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future<void> launchURL(String url) async {
+      final Uri uri = Uri.parse(url);
+
+      if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+        throw "Could not launch $url";
+      }
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
 
@@ -185,24 +195,45 @@ class Testimonials extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 40),
-
                   Row(
-                    children: const [
-                      Icon(Icons.close, color: Colors.white, size: 30), // X
-                      SizedBox(width: 30),
-
-                      Icon(
-                        Icons.business,
-                        color: Colors.white,
-                        size: 30,
-                      ), 
-                      SizedBox(width: 30),
-
-                      Icon(
-                        Icons.camera_alt_outlined,
-                        color: Colors.white,
-                        size: 30,
-                      ), 
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          launchURL("https://x.com/al_mawa__");
+                        },
+                        icon: const FaIcon(
+                          FontAwesomeIcons.xTwitter,
+                          color: Colors.white,
+                          size: 26,
+                        ),
+                      ),
+                      const SizedBox(width: 18),
+                      IconButton(
+                        onPressed: () {
+                          launchURL(
+                            "https://www.linkedin.com/company/al-mawa-international-opc-private-limited/posts/?feedView=all",
+                          );
+                        },
+                        icon: const FaIcon(
+                          FontAwesomeIcons.linkedinIn,
+                          color: Colors.white,
+                          size: 26,
+                        ),
+                      ),
+                      const SizedBox(width: 18),
+                      IconButton(
+                        onPressed: () {
+                          launchURL(
+                            "https://www.instagram.com/al_mawainternational?igsh=MXJkbWt3b3NvOTBmaw%3D%3D",
+                          );
+                        },
+                        icon: const FaIcon(
+                          FontAwesomeIcons.instagram,
+                          color: Colors.white,
+                          size: 26,
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -214,7 +245,6 @@ class Testimonials extends StatelessWidget {
     );
   }
 
-  // ✅ Contact Info Row Widget
   static Widget _infoRow({required IconData icon, required String text}) {
     return Row(
       children: [
@@ -231,7 +261,6 @@ class Testimonials extends StatelessWidget {
   }
 }
 
-// ✅ Tag Chip Widget
 class _TagChip extends StatelessWidget {
   final String text;
 

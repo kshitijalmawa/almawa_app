@@ -19,7 +19,6 @@ class OurServicesDrawerScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ✅ Title + Close Button
                 Row(
                   children: [
                     const Text(
@@ -40,7 +39,6 @@ class OurServicesDrawerScreen extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Divider(),
 
-                // ✅ Back to Menu
                 InkWell(
                   onTap: () => Navigator.pop(context),
                   child: const Padding(
@@ -80,7 +78,6 @@ class OurServicesDrawerScreen extends StatelessWidget {
                   },
                 ),
 
-                // ✅ IT & Tech Services
                 ExpandableServiceTile(
                   title: "IT & Tech Services",
                   subItems: const [
@@ -128,7 +125,6 @@ class OurServicesDrawerScreen extends StatelessWidget {
                   },
                 ),
 
-                // ✅ Graphic Design
                 ExpandableServiceTile(
                   title: "Graphic Design",
                   subItems: const [
@@ -150,7 +146,6 @@ class OurServicesDrawerScreen extends StatelessWidget {
                   },
                 ),
 
-                // ✅ AI Services
                 ExpandableServiceTile(
                   title: "AI Services",
                   subItems: const [
@@ -181,9 +176,6 @@ class OurServicesDrawerScreen extends StatelessWidget {
   }
 }
 
-//
-// ✅ Custom Expandable Tile Widget
-//
 class ExpandableServiceTile extends StatefulWidget {
   final String title;
   final List<String> subItems;
@@ -207,10 +199,8 @@ class _ExpandableServiceTileState extends State<ExpandableServiceTile> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // ✅ Main Row (Title + Arrow)
         Row(
           children: [
-            // ✅ Tap Title → Navigate
             Expanded(
               child: InkWell(
                 onTap: widget.onNavigate,
@@ -243,7 +233,6 @@ class _ExpandableServiceTileState extends State<ExpandableServiceTile> {
           ],
         ),
 
-        // ✅ Expanded Bullet List
         if (isExpanded)
           Column(
             children: widget.subItems.map((text) {
