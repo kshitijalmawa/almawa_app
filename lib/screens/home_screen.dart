@@ -1,4 +1,5 @@
 import 'package:almawa_app/screens/about_screen.dart';
+import 'package:almawa_app/screens/careers_screen.dart';
 import 'package:almawa_app/screens/our_service_drawer_screen.dart';
 import 'package:almawa_app/screens/our_work_screen.dart';
 import 'package:almawa_app/testimonials/directors_desk.dart';
@@ -286,8 +287,6 @@ class HomeScreen extends StatelessWidget {
                 ],
                 onTap: () {},
               ),
-
-              // ✅ IT Services Card
               ServiceCardWidget(
                 icon: Icons.settings,
                 iconColor: Colors.blueGrey,
@@ -319,7 +318,6 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {},
               ),
 
-              // ✅ Graphic Design Card
               ServiceCardWidget(
                 icon: Icons.brush,
                 iconColor: Colors.pinkAccent,
@@ -335,7 +333,6 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {},
               ),
 
-              // ✅ AI Services Card
               ServiceCardWidget(
                 icon: Icons.psychology,
                 iconColor: const Color(0xFF3D5AFE),
@@ -399,14 +396,11 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Brand Icon
                     Image.asset(
                       "assets/images/logowhite.png",
                       height: 100,
                       fit: BoxFit.contain,
                     ),
-
-                    // Tagline
                     const Text(
                       "Delivering next-generation digital solutions that\ntransform ideas into measurable results.",
                       style: TextStyle(
@@ -415,10 +409,7 @@ class HomeScreen extends StatelessWidget {
                         height: 1.6,
                       ),
                     ),
-
                     const SizedBox(height: 28),
-
-                    // Contact Info Title
                     const Text(
                       "CONTACT INFO",
                       style: TextStyle(
@@ -654,7 +645,10 @@ class HomeScreen extends StatelessWidget {
                 Icons.card_travel,
                 'Careers',
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CareersScreen()),
+                  );
                 },
               ),
               ExpansionTile(

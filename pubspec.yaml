@@ -48,6 +48,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
   flutter_launcher_icons: ^0.14.4
+  dropdown_button2: ^2.3.9
+
 
 flutter_icons:
   android: true

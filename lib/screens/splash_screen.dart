@@ -22,13 +22,16 @@ class _SplashScreenState extends State<SplashScreen>
       duration: const Duration(seconds: 4),
     );
 
+    // ✅ Scale Animation (Small → Big)
     _scaleAnimation = Tween<double>(
       begin: 0.3,
       end: 1.2,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
+    // Start Animation
     _controller.forward();
 
+    // ✅ Navigate after 4 seconds
     Future.delayed(const Duration(seconds: 4), () {
       Navigator.pushReplacement(
         context,
