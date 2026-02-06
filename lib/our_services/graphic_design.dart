@@ -1,6 +1,7 @@
 import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/widget/benifit_item_card.dart';
 import 'package:almawa_app/widget/call_to_action_button.dart';
+import 'package:almawa_app/widget/enquiry_dialog.dart';
 import 'package:almawa_app/widget/marketing_stat_card.dart';
 import 'package:almawa_app/widget/service_card.dart';
 import 'package:flutter/material.dart';
@@ -146,8 +147,11 @@ class GraphicDesign extends StatelessWidget {
                         'Color Schemes',
                         'Typography Selection',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -163,8 +167,11 @@ class GraphicDesign extends StatelessWidget {
                         'Advertisement Design',
                         'Promotional Graphics',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -180,8 +187,11 @@ class GraphicDesign extends StatelessWidget {
                         'Digital Ads',
                         'Web Graphics',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -197,8 +207,11 @@ class GraphicDesign extends StatelessWidget {
                         'Icons & Illustrations',
                         'User Interface Design',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -215,7 +228,10 @@ class GraphicDesign extends StatelessWidget {
                         'Corporate Presentations',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -231,8 +247,11 @@ class GraphicDesign extends StatelessWidget {
                         'GIF Creation',
                         'Interactive Media',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -248,8 +267,11 @@ class GraphicDesign extends StatelessWidget {
                         'Character Design',
                         'Infographics',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -265,8 +287,11 @@ class GraphicDesign extends StatelessWidget {
                         'Catalog Design',
                         'Print Materials',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -282,8 +307,11 @@ class GraphicDesign extends StatelessWidget {
                         'Brand Applications',
                         'Product Graphics',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -299,8 +327,11 @@ class GraphicDesign extends StatelessWidget {
                         'AR/VR Graphics',
                         'Interactive Design',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -316,8 +347,11 @@ class GraphicDesign extends StatelessWidget {
                         'Marketing Effectiveness',
                         'Customer Trust',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),

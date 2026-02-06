@@ -1,6 +1,7 @@
 import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/widget/benifit_item_card.dart';
 import 'package:almawa_app/widget/call_to_action_button.dart';
+import 'package:almawa_app/widget/enquiry_dialog.dart';
 import 'package:almawa_app/widget/service_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -97,8 +98,11 @@ class AiServices extends StatelessWidget {
                         'Recommendation Systems',
                         'Anomaly Detection',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -115,7 +119,10 @@ class AiServices extends StatelessWidget {
                         'Language Translation',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -131,8 +138,11 @@ class AiServices extends StatelessWidget {
                         'Facial Recognition',
                         'Quality Inspection',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -148,8 +158,11 @@ class AiServices extends StatelessWidget {
                         'Creative Design',
                         'Synthetic Data',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -165,8 +178,11 @@ class AiServices extends StatelessWidget {
                         'Workflow Optimization',
                         'RPA Integration',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -182,8 +198,11 @@ class AiServices extends StatelessWidget {
                         'Data Visualization',
                         'Real-time Insights',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -199,8 +218,11 @@ class AiServices extends StatelessWidget {
                         'Security Automation',
                         'Risk Assessment',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -217,7 +239,10 @@ class AiServices extends StatelessWidget {
                         'Retail & E-commerce',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -234,7 +259,10 @@ class AiServices extends StatelessWidget {
                         'Scalable Infrastructure',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -250,8 +278,11 @@ class AiServices extends StatelessWidget {
                         'Technical Support',
                         'Knowledge Transfer',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),

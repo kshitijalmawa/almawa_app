@@ -1,6 +1,7 @@
 import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/widget/benifit_item_card.dart';
 import 'package:almawa_app/widget/call_to_action_button.dart';
+import 'package:almawa_app/widget/enquiry_dialog.dart';
 import 'package:almawa_app/widget/service_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -93,8 +94,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Modern UI/UX',
                         'Cross-browser Compatible',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -110,8 +114,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Brand Integration',
                         'Mobile-first Design',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -127,8 +134,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Database Integration',
                         'API Development',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -144,8 +154,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Inventory Management',
                         'Order Processing',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -161,8 +174,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Inventory Management',
                         'Order Processing',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -178,8 +194,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Social Integration',
                         'Performance Tracking',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -195,8 +214,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'SSL Implementation',
                         'Backup Solutions',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -213,7 +235,10 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Technical Support',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -229,8 +254,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'Modern FrameworkS',
                         'Cloud Solutions',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -246,8 +274,11 @@ class WebDevlopmentScreen extends StatelessWidget {
                         'higher Conversion Rates',
                         'Profeshional Credibility',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 62),

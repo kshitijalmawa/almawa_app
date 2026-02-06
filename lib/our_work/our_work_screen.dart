@@ -46,8 +46,6 @@ class OurWorkScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 24),
-
-            /// OUR WORK TITLE
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: RichText(
@@ -143,7 +141,8 @@ class OurWorkScreen extends StatelessWidget {
                     title: "Nitin Hardware",
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
-                    logoPath: "assets/images/nitin.png",
+                    logoPath: "assets/images/nitin.png", 
+                    websiteUrl: '',
                   ),
                 ],
               ),
@@ -158,6 +157,7 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/lifestyle.png",
+                    websiteUrl: '',
                   ),
                 ],
               ),
@@ -172,6 +172,7 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/chocolate.png",
+                    websiteUrl: '',
                   ),
                 ],
               ),
@@ -186,6 +187,7 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/hotel.png",
+                    websiteUrl: '',
                   ),
                 ],
               ),
@@ -200,6 +202,7 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/divyansh.png",
+                    websiteUrl: '',
                   ),
                 ],
               ),
@@ -238,6 +241,7 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/nitin.png",
+                    websiteUrl: 'https://www.nitinhardware.in/',
                   ),
                 ],
               ),
@@ -251,7 +255,8 @@ class OurWorkScreen extends StatelessWidget {
                     title: "Life Style Home Decor",
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
-                    logoPath: "assets/images/lifestyle.png",
+                    logoPath: "assets/images/lifestyle.png", 
+                    websiteUrl: 'https://www.lifestylehomedecor.in/',
                   ),
                 ],
               ),
@@ -264,14 +269,12 @@ class OurWorkScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Brand Icon
                   Image.asset(
                     "assets/images/logowhite.png",
                     height: 100,
                     fit: BoxFit.contain,
                   ),
 
-                  // Tagline
                   const Text(
                     "Delivering next-generation digital solutions that\ntransform ideas into measurable results.",
                     style: TextStyle(
@@ -283,7 +286,6 @@ class OurWorkScreen extends StatelessWidget {
 
                   const SizedBox(height: 28),
 
-                  // Contact Info Title
                   const Text(
                     "CONTACT INFO",
                     style: TextStyle(
@@ -295,7 +297,7 @@ class OurWorkScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 20),
-GestureDetector(
+                  GestureDetector(
                     onTap: () {
                       launchURL("mailto:business@al-mawa.international");
                     },
@@ -364,7 +366,6 @@ GestureDetector(
 
                   const SizedBox(height: 20),
 
-                  // Copyright
                   const Text(
                     "© 2026 AI Mawa International. All rights reserved.",
                     style: TextStyle(color: Colors.white70, fontSize: 14),
@@ -372,7 +373,6 @@ GestureDetector(
 
                   const SizedBox(height: 16),
 
-                  // Links
                   const Text(
                     "Our Work",
                     style: TextStyle(color: Colors.white70),
@@ -385,7 +385,6 @@ GestureDetector(
 
                   const SizedBox(height: 24),
 
-                  // Social Icons
                 Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -430,6 +429,7 @@ GestureDetector(
                 ],
               ),
             ),
+            
             
           ],
         ),

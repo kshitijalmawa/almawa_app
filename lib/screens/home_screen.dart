@@ -1,9 +1,9 @@
-import 'package:almawa_app/screens/about_screen.dart';
-import 'package:almawa_app/screens/careers_screen.dart';
-import 'package:almawa_app/screens/our_service_drawer_screen.dart';
-import 'package:almawa_app/screens/our_work_screen.dart';
-import 'package:almawa_app/testimonials/directors_desk.dart';
-import 'package:almawa_app/testimonials/testimonials.dart';
+import 'package:almawa_app/our_services/ai_services.dart';
+import 'package:almawa_app/our_services/digital_marketing.dart';
+import 'package:almawa_app/our_services/graphic_design.dart';
+import 'package:almawa_app/our_services/it_and_tech_services.dart';
+import 'package:almawa_app/our_services/web_devlopment_screen.dart';
+import 'package:almawa_app/widget/app_drawer.dart';
 import 'package:almawa_app/widget/service_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -43,11 +43,11 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      endDrawer: _buildDrawer(context),
+      endDrawer: const AppDrawer(),
 
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
+          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -285,7 +285,14 @@ class HomeScreen extends StatelessWidget {
                   "Web Hosting",
                   "SEO Integration",
                 ],
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WebDevlopmentScreen(),
+                    ),
+                  );
+                },
               ),
               ServiceCardWidget(
                 icon: Icons.settings,
@@ -299,10 +306,16 @@ class HomeScreen extends StatelessWidget {
                   "Managed IT",
                   "Cloud Solutions",
                 ],
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ITAndTechServicesScreen(),
+                    ),
+                  );
+                },
               ),
 
-              // ✅ Digital Marketing Card
               ServiceCardWidget(
                 icon: Icons.campaign,
                 iconColor: const Color(0xFF19C37D),
@@ -315,7 +328,12 @@ class HomeScreen extends StatelessWidget {
                   "SMS Campaigns",
                   "Analytics",
                 ],
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DigitalMarketing()),
+                  );
+                },
               ),
 
               ServiceCardWidget(
@@ -330,7 +348,12 @@ class HomeScreen extends StatelessWidget {
                   "Digital Graphics",
                   "Print Design",
                 ],
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GraphicDesign()),
+                  );
+                },
               ),
 
               ServiceCardWidget(
@@ -345,10 +368,14 @@ class HomeScreen extends StatelessWidget {
                   "Generative AI",
                   "AI Automation",
                 ],
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AiServices()),
+                  );
+                },
               ),
 
-              // ✅ Cloud Solutions Card
               ServiceCardWidget(
                 icon: Icons.cloud_outlined,
                 iconColor: Colors.lightBlue,
@@ -568,251 +595,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  Widget _buildDrawer(BuildContext context) {
-    return Drawer(
-      backgroundColor: Colors.white,
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Image.asset(
-                    'assets/images/logoblack.png',
-                    height: 44,
-                    fit: BoxFit.contain,
-                  ),
-                  const Spacer(),
-                  IconButton(
-                    icon: const Icon(Icons.close, color: Colors.black87),
-                    onPressed: () => Navigator.of(context).maybePop(),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 12),
-
-              const Divider(color: Colors.black12),
-
-              const SizedBox(height: 20),
-
-              _drawerItem(
-                Icons.home_outlined,
-                'Home',
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              _drawerItem(
-                Icons.info_outline,
-                'About',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AboutScreen()),
-                  );
-                },
-              ),
-              _drawerItem(
-                Icons.work_history_outlined,
-                'Our Work',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OurWorkScreen()),
-                  );
-                },
-              ),
-              _drawerItem(
-                Icons.work_outline,
-                'Our Services',
-                trailing: true,
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const OurServicesDrawerScreen(),
-                    ),
-                  );
-                },
-              ),
-
-              _drawerItem(
-                Icons.card_travel,
-                'Careers',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CareersScreen()),
-                  );
-                },
-              ),
-              ExpansionTile(
-                tilePadding: EdgeInsets.zero,
-                childrenPadding: const EdgeInsets.only(left: 55),
-
-                leading: const Icon(
-                  Icons.chat_bubble_outline,
-                  color: Colors.black87,
-                  size: 22,
-                ),
-
-                title: const Text(
-                  "Testimonials",
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-
-                trailing: const Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Colors.black38,
-                ),
-
-                children: [
-                  _subDrawerItem(
-                    "Testimonials",
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Testimonials()),
-                      );
-                    },
-                  ),
-                  _subDrawerItem(
-                    "Directors Desk",
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DirectorsDesk(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-
-              const Spacer(),
-
-              const Divider(color: Colors.black12),
-
-              const SizedBox(height: 16),
-
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 14,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text('Language', style: TextStyle(color: Colors.black54)),
-                    SizedBox(height: 6),
-                    Text('English', style: TextStyle(fontSize: 16)),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 12),
-
-              Center(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    elevation: 0,
-                    side: BorderSide(color: Colors.blue.shade200),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 12,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    'Contact Us',
-                    style: TextStyle(color: Colors.black87),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              const Text(
-                '© 2026 AI Mawa International',
-                style: TextStyle(color: Colors.black54, fontSize: 12),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _drawerItem(
-    IconData icon,
-    String title, {
-    bool trailing = false,
-    VoidCallback? onTap,
-  }) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(6),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 18, top: 4),
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.black87, size: 22),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.black87,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            if (trailing)
-              const Icon(Icons.chevron_right, color: Colors.black38),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-Widget _subDrawerItem(String title, {VoidCallback? onTap}) {
-  return InkWell(
-    onTap: onTap,
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.black87,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
 }

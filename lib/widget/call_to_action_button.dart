@@ -21,7 +21,6 @@ class CallToActionButtons extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
-          // Primary button
           SizedBox(
             width: double.infinity,
             height: 48,

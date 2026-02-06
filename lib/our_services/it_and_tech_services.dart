@@ -1,6 +1,7 @@
 import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/widget/benifit_item_card.dart';
 import 'package:almawa_app/widget/call_to_action_button.dart';
+import 'package:almawa_app/widget/enquiry_dialog.dart';
 import 'package:almawa_app/widget/service_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -98,7 +99,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Support Structure',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -115,7 +119,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'System Architecture',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -132,7 +139,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Performance Optimization',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -149,7 +159,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Container Management',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -166,7 +179,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Legacy Modernization',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -183,7 +199,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Risk Assessment',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -200,7 +219,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Data Visualization',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -217,7 +239,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Remote Access',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -234,7 +259,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Documentation',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -251,7 +279,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Automation Tools',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 16),
@@ -268,7 +299,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
                         'Strategic Growth',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),

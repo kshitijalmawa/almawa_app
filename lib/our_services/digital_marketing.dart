@@ -1,6 +1,7 @@
 import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/widget/benifit_item_card.dart';
 import 'package:almawa_app/widget/call_to_action_button.dart';
+import 'package:almawa_app/widget/enquiry_dialog.dart';
 import 'package:almawa_app/widget/marketing_stat_card.dart';
 import 'package:almawa_app/widget/service_card.dart';
 import 'package:flutter/material.dart';
@@ -140,8 +141,11 @@ class DigitalMarketing extends StatelessWidget {
                         'A/B Testing',
                         'Performance Analytics',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 20),
@@ -158,7 +162,10 @@ class DigitalMarketing extends StatelessWidget {
                         'Automated Responses',
                       ],
                       onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 20),
@@ -174,8 +181,11 @@ class DigitalMarketing extends StatelessWidget {
                         'Delivery Reports',
                         'Opt-in Management',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 20),
@@ -191,8 +201,11 @@ class DigitalMarketing extends StatelessWidget {
                         'Customer Journey Mapping',
                         'Synchronized Messaging',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 20),
@@ -208,8 +221,11 @@ class DigitalMarketing extends StatelessWidget {
                         'Cost-Effective',
                         'Measurable Results',
                       ],
-                      onEnquire: () {
-                        debugPrint('Web Development Enquire tapped');
+                       onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
                       },
                     ),
                     SizedBox(height: 40),
@@ -440,7 +456,6 @@ class DigitalMarketing extends StatelessWidget {
 
                           const SizedBox(height: 20),
 
-                          // Copyright
                           const Text(
                             "© 2026 AI Mawa International. All rights reserved.",
                             style: TextStyle(

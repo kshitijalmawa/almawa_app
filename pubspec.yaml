@@ -92,8 +92,13 @@ flutter:
     - assets/images/lifestyle.png
     - assets/images/chocolate.png
     - assets/images/hotel.png 
-    - assets/images/divyansh.png    
-
+    - assets/images/divyansh.png 
+    - assets/images/wheel_harmony.png
+    - assets/images/craveable_co.png
+    - assets/images/lux_perfume.png
+    - assets/images/feesy_school_hub.png
+    - assets/images/mapdark.png
+      
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
