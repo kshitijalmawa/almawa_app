@@ -21,7 +21,6 @@ class AppDrawer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ✅ TOP HEADER Padding
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
               child: Row(
@@ -38,7 +37,6 @@ class AppDrawer extends StatelessWidget {
 
             const Divider(color: Colors.black12),
 
-            // ✅ MENU ITEMS Padding
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
@@ -170,92 +168,97 @@ class AppDrawer extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 30),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          children: [
+                            const Divider(color: Colors.black12),
+                            const SizedBox(height: 16),
+
+                            Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 14,
+                                vertical: 14,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade100,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Language",
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                  SizedBox(height: 6),
+                                  Text(
+                                    "English",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            const SizedBox(height: 14),
+
+                            SizedBox(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                style: OutlinedButton.styleFrom(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 14,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ContactUsScreen(),
+                                    ),
+                                  );
+                                },
+                                child: const Text(
+                                  "Contact Us",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(height: 18),
+
+                            const Center(
+                              child: Text(
+                                "© 2026 AL Mawa International",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
-            ),
-
-            // ✅ BOTTOM SECTION Padding
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  const Divider(color: Colors.black12),
-                  const SizedBox(height: 16),
-
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 14,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Language",
-                          style: TextStyle(fontSize: 13, color: Colors.black54),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          "English",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 14),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ContactUsScreen(),
-                          ),
-                        );
-                      },
-                      child: const Text(
-                        "Contact Us",
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black87,
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  const SizedBox(height: 18),
-
-                  const Center(
-                    child: Text(
-                      "© 2026 AL Mawa International",
-                      style: TextStyle(fontSize: 12, color: Colors.black54),
-                    ),
-                  ),
-
-                  const SizedBox(height: 16),
-                ],
-              ),
-            ),
+            ),    
           ],
         ),
       ),

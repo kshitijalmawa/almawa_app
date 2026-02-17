@@ -398,7 +398,12 @@ class ITAndTechServicesScreen extends StatelessWidget {
                       primaryText: 'Get IT Consultation',
                       secondaryText: 'Learn More About Us',
                       onPrimaryTap: () {
-                        debugPrint('Consultation tapped');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const EnquiryDialog(),
+                          ),
+                        );
                       },
                       onSecondaryTap: () {
                         Navigator.push(

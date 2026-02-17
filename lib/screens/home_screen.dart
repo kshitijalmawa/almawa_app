@@ -4,6 +4,7 @@ import 'package:almawa_app/our_services/graphic_design.dart';
 import 'package:almawa_app/our_services/it_and_tech_services.dart';
 import 'package:almawa_app/our_services/web_devlopment_screen.dart';
 import 'package:almawa_app/widget/app_drawer.dart';
+import 'package:almawa_app/widget/desk_voice_card.dart';
 import 'package:almawa_app/widget/service_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -51,6 +52,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(height: 24),
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
@@ -412,7 +414,53 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 24),
+              SizedBox(height: 24),
+              SizedBox(
+                height: 330,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(left: 18),
+                  children: const [
+                    DeskVoiceCard(
+                      quote:
+                          "At AL-Mawa International, we turn vision into purpose empowering growth through innovation and trust. From legal to digital and financial solutions, we simplify challenges, build partnerships, and shape a sustainable future together.",
+                      teamName: "Director",
+                    ),
+
+                    DeskVoiceCard(
+                      quote:
+                          "At AL-Mawa International, our HR team empowers people to grow and succeed. We value talent, nurture potential, and foster a culture of respect, inclusion, and excellence that drives and organizational success",
+                      teamName: "HR Department",
+                    ),
+
+                    DeskVoiceCard(
+                      quote:
+                          "At AL-Mawa International, Our Marketing & Sales team turns strategy into impact. We craft powerful brand stories, build lasting client relationships, and drive growth through innovation with customer needs and market trends",
+                      teamName: "Marketing Team",
+                    ),
+
+                    DeskVoiceCard(
+                      quote:
+                          "At AL-Mawa International, Our Legal Department safeguards the company’s values and vision. We ensure compliance, manage risk, and uphold ethics empowering every decision with trust, transparency, and legal precision ",
+                      teamName: "Legal Team",
+                    ),
+
+                    DeskVoiceCard(
+                      quote:
+                          "At AL-Mawa International, Our Software Development team builds smart digital solutions. We create, code, and optimize technology that drives growth, efficiency, and seamless experiences for our clients and users.",
+                      teamName: "Tech Team",
+                    ),
+
+                    DeskVoiceCard(
+                      quote:
+                          "At AL-Mawa International, Our Design Team transforms ideas into striking visuals. We craft creative designs that enhance brand identity and deliver impactful, memorable experiences for our clients and users.",
+                      teamName: "Design Team",
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 80),
               Container(
                 width: double.infinity,
                 color: Colors.black,

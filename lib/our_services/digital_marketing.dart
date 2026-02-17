@@ -322,7 +322,12 @@ class DigitalMarketing extends StatelessWidget {
                       primaryText: 'Start marketing Campaign',
                       secondaryText: 'Learn More About Us',
                       onPrimaryTap: () {
-                        debugPrint('Consultation tapped');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const EnquiryDialog(),
+                          ),
+                        );
                       },
                       onSecondaryTap: () {
                         Navigator.push(
@@ -344,14 +349,12 @@ class DigitalMarketing extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Brand Icon
                           Image.asset(
                             "assets/images/logowhite.png",
                             height: 100,
                             fit: BoxFit.contain,
                           ),
 
-                          // Tagline
                           const Text(
                             "Delivering next-generation digital solutions that\ntransform ideas into measurable results.",
                             style: TextStyle(
@@ -363,7 +366,6 @@ class DigitalMarketing extends StatelessWidget {
 
                           const SizedBox(height: 28),
 
-                          // Contact Info Title
                           const Text(
                             "CONTACT INFO",
                             style: TextStyle(

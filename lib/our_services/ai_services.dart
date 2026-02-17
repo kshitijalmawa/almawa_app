@@ -382,7 +382,7 @@ class AiServices extends StatelessWidget {
                       primaryText: 'Start AI Project',
                       secondaryText: 'Learn More About Us',
                       onPrimaryTap: () {
-                        debugPrint('Consultation tapped');
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> EnquiryDialog()));
                       },
                       onSecondaryTap: () {
                         Navigator.push(
