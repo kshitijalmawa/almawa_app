@@ -37,7 +37,6 @@ class ServiceCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// Top Row (Icon + Badge)
           Row(
             children: [
               Container(

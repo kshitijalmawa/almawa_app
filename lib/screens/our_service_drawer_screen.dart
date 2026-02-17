@@ -216,8 +216,6 @@ class _ExpandableServiceTileState extends State<ExpandableServiceTile> {
                 ),
               ),
             ),
-
-            // ✅ Tap Arrow → Expand/Collapse
             IconButton(
               icon: Icon(
                 isExpanded

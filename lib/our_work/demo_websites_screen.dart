@@ -1,3 +1,4 @@
+import 'package:almawa_app/screens/contact_us_screen.dart';
 import 'package:almawa_app/widget/demo_website_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -15,6 +16,7 @@ class DemoWebsitesScreen extends StatelessWidget {
         throw "Could not launch $url";
       }
     }
+
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
@@ -194,29 +196,31 @@ class DemoWebsitesScreen extends StatelessWidget {
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusGeometry.circular(6),
-                    
                   ),
                 ),
-                onPressed: () {},
-                child: Text('Get Started',style: TextStyle(fontSize: 16),),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ContactUsScreen()),
+                  );
+                },
+                child: Text('Get Started', style: TextStyle(fontSize: 16)),
               ),
             ),
             SizedBox(height: 40),
-              Container(
+            Container(
               width: double.infinity,
               color: Colors.black,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Brand Icon
                   Image.asset(
                     "assets/images/logowhite.png",
                     height: 100,
                     fit: BoxFit.contain,
                   ),
 
-                  // Tagline
                   const Text(
                     "Delivering next-generation digital solutions that\ntransform ideas into measurable results.",
                     style: TextStyle(
@@ -228,7 +232,6 @@ class DemoWebsitesScreen extends StatelessWidget {
 
                   const SizedBox(height: 28),
 
-                  // Contact Info Title
                   const Text(
                     "CONTACT INFO",
                     style: TextStyle(
@@ -309,7 +312,6 @@ class DemoWebsitesScreen extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // Copyright
                   const Text(
                     "© 2026 AI Mawa International. All rights reserved.",
                     style: TextStyle(color: Colors.white70, fontSize: 14),
@@ -317,7 +319,6 @@ class DemoWebsitesScreen extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // Links
                   const Text(
                     "Our Work",
                     style: TextStyle(color: Colors.white70),

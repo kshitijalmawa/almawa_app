@@ -42,6 +42,7 @@ class AboutScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 24),
             const Text(
               "𝖠𝖡𝖮𝖴𝖳 \n𝖴𝖲",
               textAlign: TextAlign.center,
