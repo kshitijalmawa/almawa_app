@@ -1,3 +1,4 @@
+import 'package:almawa_app/widget/apply_form_dialog.dart';
 import 'package:flutter/material.dart';
 
 class JobCard extends StatefulWidget {
@@ -127,7 +128,11 @@ class _JobCardState extends State<JobCard> {
             const SizedBox(height: 14),
 
             _detailRow(Icons.business, "Department:", widget.department),
-            _detailRow(Icons.location_on_outlined, "Location:", widget.location),
+            _detailRow(
+              Icons.location_on_outlined,
+              "Location:",
+              widget.location,
+            ),
             _detailRow(Icons.work, "Type:", widget.type),
             _detailRow(Icons.currency_rupee, "Salary:", widget.salary),
 
@@ -156,7 +161,15 @@ class _JobCardState extends State<JobCard> {
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                 showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) {
+                    return ApplyFormDialog(jobTitle: widget.title);
+                  },
+                );
+              },
               child: const Text(
                 "Apply Now  →",
                 style: TextStyle(
