@@ -1,7 +1,7 @@
+import 'package:almawa_app/footer/app_footer.dart';
 import 'package:almawa_app/widget/reach_us_card.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsScreen extends StatefulWidget {
@@ -12,13 +12,6 @@ class ContactUsScreen extends StatefulWidget {
 }
 
 class _ContactUsScreenState extends State<ContactUsScreen> {
-  Future<void> launchURL(String url) async {
-    final Uri uri = Uri.parse(url);
-
-    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-      throw "Could not launch $url";
-    }
-  }
 
   String? selectedCountry;
 
@@ -63,11 +56,12 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height:20),
             const Center(
               child: Text(
                 "CONTACT US",
                 style: TextStyle(
-                  fontSize: 46,
+                  fontSize: 36,
                   fontWeight: FontWeight.w500,
                   letterSpacing: 2,
                   fontFamily: "TimesNewRoman",
@@ -76,7 +70,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
               ),
             ),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
 
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 28),
@@ -90,7 +84,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
               ),
             ),
 
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -136,7 +130,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 35),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Container(
@@ -369,170 +363,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
             ),
 
             SizedBox(height: 80),
-            Container(
-              width: double.infinity,
-              color: Colors.black,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 32),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    "assets/images/logowhite.png",
-                    height: 100,
-                    fit: BoxFit.contain,
-                  ),
-                  const Text(
-                    "Delivering next-generation digital solutions that\ntransform ideas into measurable results.",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                      height: 1.6,
-                    ),
-                  ),
-                  const SizedBox(height: 28),
-                  const Text(
-                    "CONTACT INFO",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 1.2,
-                    ),
-                  ),
-
-                  const SizedBox(height: 20),
-                  GestureDetector(
-                    onTap: () {
-                      launchURL("mailto:business@al-mawa.international");
-                    },
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.email_outlined,
-                          color: Colors.white70,
-                          size: 20,
-                        ),
-                        SizedBox(width: 12),
-                        Text(
-                          "business@al-mawa.international",
-                          style: TextStyle(color: Colors.white70, fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 12),
-
-                  GestureDetector(
-                    onTap: () {
-                      launchURL("tel:+919561179693");
-                    },
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.phone_outlined,
-                          color: Colors.white70,
-                          size: 20,
-                        ),
-                        SizedBox(width: 12),
-                        Text(
-                          "+91 9561179693 | 9511991736",
-                          style: TextStyle(color: Colors.white70, fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  GestureDetector(
-                    onTap: () {
-                      launchURL(
-                        "https://www.google.com/maps/search/?api=1&query=Al-Mawa+International",
-                      );
-                    },
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.location_on_outlined,
-                          color: Colors.white70,
-                          size: 20,
-                        ),
-                        SizedBox(width: 12),
-                        Text(
-                          "AL-MAWA INTERNATIONAL Location",
-                          style: TextStyle(color: Colors.white70, fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Divider(color: Colors.white24),
-
-                  const SizedBox(height: 20),
-
-                  const Text(
-                    "© 2026 AI Mawa International. All rights reserved.",
-                    style: TextStyle(color: Colors.white70, fontSize: 14),
-                  ),
-
-                  const SizedBox(height: 16),
-
-                  // Links
-                  const Text(
-                    "Our Work",
-                    style: TextStyle(color: Colors.white70),
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    "Terms & Conditions / Policy",
-                    style: TextStyle(color: Colors.white70),
-                  ),
-
-                  const SizedBox(height: 24),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          launchURL("https://x.com/al_mawa__");
-                        },
-                        icon: const FaIcon(
-                          FontAwesomeIcons.xTwitter,
-                          color: Colors.white,
-                          size: 26,
-                        ),
-                      ),
-                      const SizedBox(width: 18),
-                      IconButton(
-                        onPressed: () {
-                          launchURL(
-                            "https://www.linkedin.com/company/al-mawa-international-opc-private-limited/posts/?feedView=all",
-                          );
-                        },
-                        icon: const FaIcon(
-                          FontAwesomeIcons.linkedinIn,
-                          color: Colors.white,
-                          size: 26,
-                        ),
-                      ),
-                      const SizedBox(width: 18),
-                      IconButton(
-                        onPressed: () {
-                          launchURL(
-                            "https://www.instagram.com/al_mawainternational?igsh=MXJkbWt3b3NvOTBmaw%3D%3D",
-                          );
-                        },
-                        icon: const FaIcon(
-                          FontAwesomeIcons.instagram,
-                          color: Colors.white,
-                          size: 26,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            const AppFooter(),
           ],
         ),
       ),
