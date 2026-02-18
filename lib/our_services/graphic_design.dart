@@ -2,7 +2,7 @@ import 'package:almawa_app/footer/app_footer.dart';
 import 'package:almawa_app/screens/about_screen.dart';
 import 'package:almawa_app/widget/benifit_item_card.dart';
 import 'package:almawa_app/widget/call_to_action_button.dart';
-import 'package:almawa_app/widget/enquiry_dialog.dart';
+import 'package:almawa_app/dialog/enquiry_dialog.dart';
 import 'package:almawa_app/widget/marketing_stat_card.dart';
 import 'package:almawa_app/widget/service_card.dart';
 import 'package:flutter/material.dart';
