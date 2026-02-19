@@ -36,7 +36,6 @@ class ReachUsCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ✅ Smaller Icon Box like website
           Container(
             height: 58,
             width: 58,

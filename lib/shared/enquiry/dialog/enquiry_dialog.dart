@@ -1,3 +1,4 @@
+import 'package:almawa_app/shared/enquiry/services/enquiry_services.dart';
 import 'package:flutter/material.dart';
 
 class EnquiryDialog extends StatefulWidget {
@@ -55,21 +56,35 @@ class _EnquiryDialogState extends State<EnquiryDialog> {
     );
   }
 
-  void _submitForm() {
+  void _submitForm() async {
     if (!_formKey.currentState!.validate()) return;
 
-    final enquiryData = {
-      "name": nameController.text,
-      "email": emailController.text,
-      "phone": phoneController.text,
-      "company": companyController.text,
-      "service": service,
-      "projectDetails": projectController.text,
-    };
+    if (service == "Select Service") {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Please select a service")));
+      return;
+    }
 
-    debugPrint(enquiryData.toString());
+    final response = await EnquiryService.instance.submitEnquiry(
+      fullName: nameController.text.trim(),
+      email: emailController.text.trim(),
+      number: phoneController.text.trim(),
+      companyName: companyController.text.trim(),
+      serviceInterestedIn: service,
+      projectDetails: projectController.text.trim(),
+    );
 
-    Navigator.pop(context);
+    if (response != null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Enquiry submitted successfully")),
+      );
+      Navigator.pop(context);
+    } else {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Failed to submit enquiry")));
+    }
   }
 
   @override

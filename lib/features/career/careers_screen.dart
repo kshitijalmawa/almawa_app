@@ -383,7 +383,7 @@ class _CareersScreenState extends State<CareersScreen> {
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: Text(
-                  "No jobs found 😢",
+                  "No jobs found",
                   style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
               ),

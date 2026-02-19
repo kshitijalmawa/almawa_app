@@ -25,13 +25,13 @@ class EnquiryService {
         "fullName": fullName,
         "Email": email,
         "Number": number,
-        "CompanyName": companyName, // ✅ Added
+        "CompanyName": companyName,
         "ServiceIntrestedIn": serviceInterestedIn,
         "ProjectDetails": projectDetails,
       }),
     );
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       final body = jsonDecode(response.body);
 
       if (body['success'] == true) {
@@ -41,4 +41,5 @@ class EnquiryService {
 
     return null;
   }
+
 }
