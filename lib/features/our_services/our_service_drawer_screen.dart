@@ -1,8 +1,8 @@
-import 'package:almawa_app/our_services/ai_services.dart';
-import 'package:almawa_app/our_services/digital_marketing.dart';
-import 'package:almawa_app/our_services/graphic_design.dart';
-import 'package:almawa_app/our_services/it_and_tech_services.dart';
-import 'package:almawa_app/our_services/web_devlopment_screen.dart';
+import 'package:almawa_app/features/our_services/ai_services.dart';
+import 'package:almawa_app/features/our_services/digital_marketing.dart';
+import 'package:almawa_app/features/our_services/graphic_design.dart';
+import 'package:almawa_app/features/our_services/it_and_tech_services.dart';
+import 'package:almawa_app/features/our_services/web_devlopment_screen.dart';
 import 'package:flutter/material.dart';
 
 class OurServicesDrawerScreen extends StatelessWidget {

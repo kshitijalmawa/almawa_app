@@ -1,5 +1,5 @@
-import 'package:almawa_app/footer/app_footer.dart';
-import 'package:almawa_app/widget/reach_us_card.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/widget/reach_us_card.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';

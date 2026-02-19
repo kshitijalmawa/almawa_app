@@ -1,5 +1,5 @@
-import 'package:almawa_app/footer/app_footer.dart';
-import 'package:almawa_app/widget/card_widget.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/features/our_work/widget/card_widget.dart';
 import 'package:flutter/material.dart';
 class OurWorkScreen extends StatelessWidget {
   const OurWorkScreen({super.key});

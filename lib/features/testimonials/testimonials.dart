@@ -1,4 +1,4 @@
-import 'package:almawa_app/footer/app_footer.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
 
 class Testimonials extends StatelessWidget {

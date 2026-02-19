@@ -1,20 +1,65 @@
-import 'package:almawa_app/footer/app_footer.dart';
-import 'package:almawa_app/our_services/ai_services.dart';
-import 'package:almawa_app/our_services/digital_marketing.dart';
-import 'package:almawa_app/our_services/graphic_design.dart';
-import 'package:almawa_app/our_services/it_and_tech_services.dart';
-import 'package:almawa_app/our_services/web_devlopment_screen.dart';
-import 'package:almawa_app/widget/app_drawer.dart';
-import 'package:almawa_app/widget/desk_voice_card.dart';
-import 'package:almawa_app/widget/service_card_widget.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/features/our_services/ai_services.dart';
+import 'package:almawa_app/features/our_services/digital_marketing.dart';
+import 'package:almawa_app/features/our_services/graphic_design.dart';
+import 'package:almawa_app/features/our_services/it_and_tech_services.dart';
+import 'package:almawa_app/features/our_services/web_devlopment_screen.dart';
+import 'package:almawa_app/features/home/widgets/app_drawer.dart';
+import 'package:almawa_app/features/home/widgets/desk_voice_card.dart';
+import 'package:almawa_app/features/home/widgets/service_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  Widget get header => Container(
+    width: double.infinity,
+    decoration: const BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage("assets/images/background.png"),
+        fit: BoxFit.cover,
+      ),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "AL MAWA\nINTERNATIONAL",
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w700,
+              color: Colors.black,
+              height: 1.2,
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          const Text(
+            "At AL-MAWA International we see technology as a strategic bridge that empowers people and accelerates growth. We partner with businesses to design tailored digital strategies, delivering measurable outcomes through innovation, reliability, and a commitment to excellence.",
+            style: TextStyle(fontSize: 16, height: 1.6, color: Colors.black87),
+          ),
+
+          const SizedBox(height: 24),
+
+          ClipRRect(
+            borderRadius: BorderRadius.circular(14),
+            child: Image.asset(
+              "assets/images/team_discuss.png",
+              height: 150,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
@@ -90,58 +135,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/background.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 40,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "AL MAWA\nINTERNATIONAL",
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black,
-                          height: 1.2,
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      const Text(
-                        "At AL-MAWA International we see technology as a strategic bridge that empowers people and accelerates growth. We partner with businesses to design tailored digital strategies, delivering measurable outcomes through innovation, reliability, and a commitment to excellence.",
-                        style: TextStyle(
-                          fontSize: 16,
-                          height: 1.6,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      const SizedBox(height: 24),
-
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(14),
-                        child: Image.asset(
-                          "assets/images/team_discuss.png",
-                          height: 150,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              header,
               Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(

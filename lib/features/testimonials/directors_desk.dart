@@ -1,4 +1,4 @@
-import 'package:almawa_app/footer/app_footer.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
 
 class DirectorsDesk extends StatelessWidget {
@@ -91,7 +91,6 @@ class DirectorsDesk extends StatelessWidget {
                 ],
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 22),
               child: Column(
@@ -311,7 +310,6 @@ class DirectorsDesk extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(height: 80),
             const AppFooter(),
           ],

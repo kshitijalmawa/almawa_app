@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:almawa_app/model/enquiry_model.dart';
+import 'package:almawa_app/shared/enquiry/model/enquiry_model.dart';
 import 'package:http/http.dart' as http;
 
 class EnquiryService {

@@ -1,5 +1,6 @@
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
-import 'home_screen.dart'; 
+import '../home/home_screen.dart'; 
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -54,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
       body: Center(
         child: ScaleTransition(
           scale: _scaleAnimation,
-          child: Image.asset("assets/images/logoblack.png", height: 120),
+          child: Image.asset(SharedImages.alMawaLogo, height: 120),
         ),
       ),
     );

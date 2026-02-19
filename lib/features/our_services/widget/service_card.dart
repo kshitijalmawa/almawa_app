@@ -1,3 +1,4 @@
+import 'package:almawa_app/shared/enquiry/dialog/enquiry_dialog.dart';
 import 'package:flutter/material.dart';
 
 class ServiceCard extends StatelessWidget {
@@ -6,7 +7,7 @@ class ServiceCard extends StatelessWidget {
   final String title;
   final String description;
   final List<String> features;
-  final VoidCallback onEnquire;
+  final VoidCallback? onEnquire;
 
   const ServiceCard({
     super.key,
@@ -15,8 +16,12 @@ class ServiceCard extends StatelessWidget {
     required this.title,
     required this.description,
     required this.features,
-    required this.onEnquire,
+    this.onEnquire,
   });
+
+  void showEnquiryDialog(BuildContext context) {
+    showDialog(context: context, builder: (_) => const EnquiryDialog());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +119,7 @@ class ServiceCard extends StatelessWidget {
             width: double.infinity,
             height: 48,
             child: ElevatedButton(
-              onPressed: onEnquire,
+              onPressed: onEnquire ?? ()=>  showEnquiryDialog(context),
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(250, 40),
                 backgroundColor: Colors.blue,

@@ -1,14 +1,14 @@
-import 'package:almawa_app/screens/contact_us_screen.dart';
+import 'package:almawa_app/features/contact_us/contact_us_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/about_screen.dart';
-import '../screens/careers_screen.dart';
-import '../our_work/demo_websites_screen.dart';
-import '../screens/our_service_drawer_screen.dart';
-import '../our_work/our_work_screen.dart';
+import '../../about/about_screen.dart';
+import '../../career/careers_screen.dart';
+import '../../our_work/demo_websites_screen.dart';
+import '../../our_services/our_service_drawer_screen.dart';
+import '../../our_work/our_work_screen.dart';
 
-import '../testimonials/directors_desk.dart';
-import '../testimonials/testimonials.dart';
+import '../../testimonials/directors_desk.dart';
+import '../../testimonials/testimonials.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});

@@ -1,7 +1,7 @@
-import 'package:almawa_app/footer/app_footer.dart';
-import 'package:almawa_app/widget/benefit_card.dart';
-import 'package:almawa_app/widget/faq_tile.dart';
-import 'package:almawa_app/widget/job_card.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/widget/benefit_card.dart';
+import 'package:almawa_app/features/career/widget/faq_tile.dart';
+import 'package:almawa_app/features/career/widget/job_card.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
@@ -16,7 +16,6 @@ class _CareersScreenState extends State<CareersScreen> {
   TextEditingController searchController = TextEditingController();
   String searchQuery = "";
 
-  // ✅ Only ONE declaration of selectedDepartment
   String selectedDepartment = "All Departments";
 
   List<Map<String, dynamic>> jobs = [
@@ -265,7 +264,6 @@ class _CareersScreenState extends State<CareersScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Column(
                 children: [
-                  // Search Field
                   TextField(
                     controller: searchController,
                     onChanged: (value) {
@@ -288,7 +286,6 @@ class _CareersScreenState extends State<CareersScreen> {
                     ),
                   ),
                   const SizedBox(height: 15),
-                  // Department Dropdown
                   DropdownButtonHideUnderline(
                     child: DropdownButton2<String>(
                       isExpanded: true,
@@ -365,7 +362,6 @@ class _CareersScreenState extends State<CareersScreen> {
             ),
             const SizedBox(height: 30),
 
-            // ✅ Only ONE dynamic filtered list — no hardcoded duplicates
             Column(
               children: filteredJobs.map((job) {
                 return Padding(

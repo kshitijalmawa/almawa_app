@@ -1,6 +1,6 @@
-import 'package:almawa_app/footer/app_footer.dart';
-import 'package:almawa_app/screens/contact_us_screen.dart';
-import 'package:almawa_app/widget/demo_website_card.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/features/contact_us/contact_us_screen.dart';
+import 'package:almawa_app/features/our_work/widget/demo_website_card.dart';
 import 'package:flutter/material.dart';
 
 class DemoWebsitesScreen extends StatelessWidget {

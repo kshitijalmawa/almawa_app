@@ -1,9 +1,9 @@
-import 'package:almawa_app/footer/app_footer.dart';
-import 'package:almawa_app/screens/about_screen.dart';
-import 'package:almawa_app/widget/benifit_item_card.dart';
-import 'package:almawa_app/widget/call_to_action_button.dart';
-import 'package:almawa_app/dialog/enquiry_dialog.dart';
-import 'package:almawa_app/widget/service_card.dart';
+import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/features/about/about_screen.dart';
+import 'package:almawa_app/features/career/widget/benifit_item_card.dart';
+import 'package:almawa_app/features/our_services/widget/call_to_action_button.dart';
+import 'package:almawa_app/shared/enquiry/dialog/enquiry_dialog.dart';
+import 'package:almawa_app/features/our_services/widget/service_card.dart';
 import 'package:flutter/material.dart';
 
 class AiServices extends StatelessWidget {
@@ -11,7 +11,6 @@ class AiServices extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
@@ -90,12 +89,6 @@ class AiServices extends StatelessWidget {
                         'Recommendation Systems',
                         'Anomaly Detection',
                       ],
-                       onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -110,12 +103,6 @@ class AiServices extends StatelessWidget {
                         'Sentiment Analysis',
                         'Language Translation',
                       ],
-                      onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -130,12 +117,6 @@ class AiServices extends StatelessWidget {
                         'Facial Recognition',
                         'Quality Inspection',
                       ],
-                       onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -150,12 +131,6 @@ class AiServices extends StatelessWidget {
                         'Creative Design',
                         'Synthetic Data',
                       ],
-                       onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -170,12 +145,6 @@ class AiServices extends StatelessWidget {
                         'Workflow Optimization',
                         'RPA Integration',
                       ],
-                       onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -190,12 +159,6 @@ class AiServices extends StatelessWidget {
                         'Data Visualization',
                         'Real-time Insights',
                       ],
-                       onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -210,12 +173,6 @@ class AiServices extends StatelessWidget {
                         'Security Automation',
                         'Risk Assessment',
                       ],
-                       onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -230,12 +187,6 @@ class AiServices extends StatelessWidget {
                         'Manufacturing',
                         'Retail & E-commerce',
                       ],
-                      onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -250,12 +201,6 @@ class AiServices extends StatelessWidget {
                         'Monitoring & Maintenance',
                         'Scalable Infrastructure',
                       ],
-                      onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 16),
                     ServiceCard(
@@ -270,12 +215,6 @@ class AiServices extends StatelessWidget {
                         'Technical Support',
                         'Knowledge Transfer',
                       ],
-                       onEnquire: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => const EnquiryDialog(),
-                        );
-                      },
                     ),
                     SizedBox(height: 40),
                     Padding(
@@ -374,7 +313,12 @@ class AiServices extends StatelessWidget {
                       primaryText: 'Start AI Project',
                       secondaryText: 'Learn More About Us',
                       onPrimaryTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> EnquiryDialog()));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EnquiryDialog(),
+                          ),
+                        );
                       },
                       onSecondaryTap: () {
                         Navigator.push(
@@ -386,7 +330,6 @@ class AiServices extends StatelessWidget {
                       },
                     ),
                     const SizedBox(height: 80),
-                    const SizedBox(height: 24),
                     const AppFooter(),
                   ],
                 ),
