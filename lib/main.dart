@@ -1,4 +1,4 @@
-import 'package:almawa_app/screens/splash_screen.dart';
+import 'package:almawa_app/features/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
