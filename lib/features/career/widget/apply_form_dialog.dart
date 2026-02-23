@@ -1,6 +1,8 @@
 import 'dart:io';
+
+import 'package:almawa_app/features/career/model/job_application.dart';
+import 'package:almawa_app/features/career/services/job_service.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
 class ApplyFormDialog extends StatefulWidget {
@@ -14,8 +16,30 @@ class ApplyFormDialog extends StatefulWidget {
 
 class _ApplyFormDialogState extends State<ApplyFormDialog> {
   final _formKey = GlobalKey<FormState>();
+
   String? fileName;
   File? selectedFile;
+  bool _isLoading = false;
+
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final emailController = TextEditingController();
+  final phoneController = TextEditingController();
+  final yearsController = TextEditingController();
+  final monthsController = TextEditingController(); // ← added
+  final coverLetterController = TextEditingController();
+
+  @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    phoneController.dispose();
+    yearsController.dispose();
+    monthsController.dispose();
+    coverLetterController.dispose();
+    super.dispose();
+  }
 
   Future<void> _pickFile() async {
     await showModalBottomSheet(
@@ -24,23 +48,6 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
         return SafeArea(
           child: Wrap(
             children: [
-              ListTile(
-                leading: const Icon(Icons.image),
-                title: const Text("Upload from Gallery"),
-                onTap: () async {
-                  Navigator.pop(context);
-                  final picker = ImagePicker();
-                  final image = await picker.pickImage(
-                    source: ImageSource.gallery,
-                  );
-                  if (image != null) {
-                    setState(() {
-                      selectedFile = File(image.path);
-                      fileName = image.name;
-                    });
-                  }
-                },
-              ),
               ListTile(
                 leading: const Icon(Icons.picture_as_pdf),
                 title: const Text("Upload PDF"),
@@ -61,11 +68,110 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
                   }
                 },
               ),
+              ListTile(
+                leading: const Icon(Icons.description),
+                title: const Text("Upload Word Document"),
+                onTap: () async {
+                  Navigator.pop(context);
+                  FilePickerResult? result = await FilePicker.platform
+                      .pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ['doc', 'docx'],
+                        withData: false,
+                        withReadStream: true,
+                      );
+                  if (result != null && result.files.single.path != null) {
+                    setState(() {
+                      selectedFile = File(result.files.single.path!);
+                      fileName = result.files.single.name;
+                    });
+                  }
+                },
+              ),
             ],
           ),
         );
       },
     );
+  }
+
+  Future<void> _submitApplication() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    // File is now optional - only validate if a file is selected
+    if (selectedFile != null) {
+      // Validate file type
+      final String fileExtension = selectedFile!.path.split('.').last.toLowerCase();
+      if (!['pdf', 'doc', 'docx'].contains(fileExtension)) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Only PDF and Word documents are accepted."),
+          ),
+        );
+        return;
+      }
+
+      // Validate file size (e.g., 5MB limit)
+      const int maxFileSizeInBytes = 5 * 1024 * 1024; // 5 MB
+      final fileSize = await selectedFile!.length();
+      if (fileSize > maxFileSizeInBytes) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Resume file size exceeds the 5MB limit."),
+          ),
+        );
+        return;
+      }
+    }
+
+    setState(() => _isLoading = true);
+
+    final application = JobApplication(
+      firstName: firstNameController.text.trim(),
+      lastName: lastNameController.text.trim(),
+      emailAddress: emailController.text.trim(),
+      phoneNumber: phoneController.text.trim(),
+      yearOfExperience: int.tryParse(yearsController.text.trim()) ?? 0,
+      monthsOfExperience: int.tryParse(monthsController.text.trim()) ?? 0,
+      coverLetter: coverLetterController.text.trim(),
+      resumePath: selectedFile?.path ?? '',
+    );
+
+    try {
+      print('Submitting application...');
+      print('Resume path: ${application.resumePath}');
+      
+      final response = await JobService.submitApplication(
+        application,
+      ).timeout(const Duration(seconds: 30));
+
+      if (!mounted) return;
+      setState(() => _isLoading = false);
+
+      print('Response: ${response.success} - ${response.message}');
+
+      if (response.success) {
+        Navigator.pop(context);
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(response.message)));
+      } else {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(response.message)));
+      }
+    } catch (e, stackTrace) {
+      print('Error submitting application: $e');
+      print('Stack trace: $stackTrace');
+      
+      if (!mounted) return;
+      setState(() => _isLoading = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Submission failed: ${e.toString()}")),
+      );
+    }
   }
 
   @override
@@ -115,24 +221,49 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    // First Name
-                    _inputField("First Name"),
+                    _inputField("First Name", firstNameController),
                     const SizedBox(height: 16),
 
-                    // Last Name
-                    _inputField("Last Name"),
+                    _inputField("Last Name", lastNameController),
                     const SizedBox(height: 16),
 
-                    _inputField("Email Address"),
+                    _inputField(
+                      "Email Address",
+                      emailController,
+                      isEmail: true,
+                    ),
                     const SizedBox(height: 16),
 
-                    _inputField("Phone Number"),
+                    _inputField("Phone Number", phoneController),
                     const SizedBox(height: 16),
 
-                    _inputField("Years of Experience"),
+                    // Years & Months in a Row
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _inputField(
+                            "Years of Experience",
+                            yearsController,
+                            isNumber: true,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: _inputField(
+                            "Months of Experience",
+                            monthsController,
+                            isNumber: true,
+                          ),
+                        ),
+                      ],
+                    ),
                     const SizedBox(height: 16),
 
-                    _inputField("Cover Letter", maxLines: 4),
+                    _inputField(
+                      "Cover Letter",
+                      coverLetterController,
+                      maxLines: 4,
+                    ),
                     const SizedBox(height: 20),
 
                     // Resume Upload
@@ -144,7 +275,6 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(height: 8),
-
                         InkWell(
                           onTap: _pickFile,
                           child: Container(
@@ -188,7 +318,9 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
                             ),
-                            onPressed: () => Navigator.pop(context),
+                            onPressed: _isLoading
+                                ? null
+                                : () => Navigator.pop(context),
                             child: const Text("Cancel"),
                           ),
                         ),
@@ -199,21 +331,20 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
                               backgroundColor: Colors.black,
                               padding: const EdgeInsets.symmetric(vertical: 14),
                             ),
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                if (fileName == null) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text("Please upload resume"),
+                            onPressed: _isLoading ? null : _submitApplication,
+                            child: _isLoading
+                                ? const SizedBox(
+                                    height: 20,
+                                    width: 20,
+                                    child: CircularProgressIndicator(
+                                      color: Colors.white,
+                                      strokeWidth: 2,
                                     ),
-                                  );
-                                  return;
-                                }
-
-                                Navigator.pop(context);
-                              }
-                            },
-                            child: const Text("Submit Application"),
+                                  )
+                                : const Text(
+                                    "Submit Application",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                           ),
                         ),
                       ],
@@ -228,9 +359,17 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
     );
   }
 
-  Widget _inputField(String label, {int maxLines = 1}) {
+  Widget _inputField(
+    String label,
+    TextEditingController controller, {
+    int maxLines = 1,
+    bool isEmail = false,
+    bool isNumber = false,
+  }) {
     return TextFormField(
+      controller: controller,
       maxLines: maxLines,
+      keyboardType: isNumber ? TextInputType.number : TextInputType.text,
       decoration: InputDecoration(
         labelText: label,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
@@ -240,9 +379,10 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
         ),
       ),
       validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "Required";
-        }
+        if (value == null || value.isEmpty) return "Required";
+        if (isEmail && !value.contains("@")) return "Enter valid email";
+        if (isNumber && int.tryParse(value) == null)
+          return "Enter valid number";
         return null;
       },
     );

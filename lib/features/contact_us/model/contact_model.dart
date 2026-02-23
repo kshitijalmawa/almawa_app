@@ -4,7 +4,7 @@ class ContactModel {
   final String emailAddress;
   final String phoneNumber;
   final String mobileNumber;
-  final String selecetCountry; 
+  final String selectedCountry;
   final String subject;
   final String tellUsAboutYou;
   final String? id;
@@ -16,7 +16,7 @@ class ContactModel {
     required this.emailAddress,
     required this.phoneNumber,
     required this.mobileNumber,
-    required this.selecetCountry,
+    required this.selectedCountry,
     required this.subject,
     required this.tellUsAboutYou,
     this.id,
@@ -25,17 +25,16 @@ class ContactModel {
 
   Map<String, dynamic> toJson() {
     return {
-      "firstName": firstName,
+      "firstname": firstName,
       "lastName": lastName,
       "emailAddress": emailAddress,
       "phoneNumber": phoneNumber,
       "mobileNumber": mobileNumber,
-      "selectCountry": selecetCountry,
+      "selecetCountry": selectedCountry,
       "subject": subject,
-      "tellUsAboutYou": tellUsAboutYou,
+      "tellUSAboutYou": tellUsAboutYou,
     };
   }
-
 
   factory ContactModel.fromJson(Map<String, dynamic> json) {
     return ContactModel(
@@ -44,9 +43,9 @@ class ContactModel {
       emailAddress: json["emailAddress"] ?? "",
       phoneNumber: json["phoneNumber"]?.toString() ?? "",
       mobileNumber: json["mobileNumber"]?.toString() ?? "",
-      selecetCountry: json["selectCountry"] ?? "",
+      selectedCountry: json["selecetCountry"] ?? "",
       subject: json["subject"] ?? "",
-      tellUsAboutYou: json["tellUsAboutYou"] ?? "",
+      tellUsAboutYou: json["tellUSAboutYou"] ?? "",
       id: json["_id"],
       v: json["__v"],
     );

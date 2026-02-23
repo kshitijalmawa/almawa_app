@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'dart:io';
+import 'package:almawa_app/features/testimonials/model/review_model.dart';
+import 'package:almawa_app/features/testimonials/services/review_service.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -18,20 +21,28 @@ class _DirectorsFeedbackFormState extends State<DirectorsFeedbackForm> {
   final mobileController = TextEditingController();
   final roleController = TextEditingController();
 
-  String rating = "5 Stars";
+  int rating = 5;
 
   File? selectedImage;
   String fileName = "No file chosen";
+  String base64Image = "";
+
+  bool isLoading = false;
 
   final ImagePicker picker = ImagePicker();
 
   Future<void> pickImage() async {
-    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    final XFile? image = await picker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 70, // compress to reduce base64 size
+    );
 
     if (image != null) {
+      final bytes = await image.readAsBytes();
       setState(() {
         selectedImage = File(image.path);
         fileName = image.name;
+        base64Image = base64Encode(bytes);
       });
     }
   }
@@ -46,20 +57,60 @@ class _DirectorsFeedbackFormState extends State<DirectorsFeedbackForm> {
     super.dispose();
   }
 
-  void submitForm() {
+  Future<void> submitForm() async {
     if (!_formKey.currentState!.validate()) return;
 
-    debugPrint("Feedback: ${feedbackController.text}");
-    debugPrint("Name: ${nameController.text}");
-    debugPrint("Email: ${emailController.text}");
-    debugPrint("Mobile: ${mobileController.text}");
-    debugPrint("Role: ${roleController.text}");
-    debugPrint("Rating: $rating");
-    debugPrint("Image: $fileName");
+    setState(() => isLoading = true);
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Feedback submitted successfully")),
-    );
+    try {
+      final review = ReviewModel(
+        name: nameController.text.trim(),
+        feedback: feedbackController.text.trim(),
+        email: emailController.text.trim(),
+        mobile: mobileController.text.trim(),
+        designation: roleController.text.trim(),
+        rating: rating,
+        image: base64Image,
+      );
+
+      await ReviewService.instance.submitReview(review);
+
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Feedback submitted successfully"),
+          backgroundColor: Color(0xFF2796C6),
+        ),
+      );
+
+      _resetForm();
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Submission failed: ${e.toString()}"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => isLoading = false);
+    }
+  }
+
+  void _resetForm() {
+    _formKey.currentState?.reset();
+    feedbackController.clear();
+    nameController.clear();
+    emailController.clear();
+    mobileController.clear();
+    roleController.clear();
+    setState(() {
+      rating = 5;
+      selectedImage = null;
+      fileName = "No file chosen";
+      base64Image = "";
+    });
   }
 
   @override
@@ -88,21 +139,50 @@ class _DirectorsFeedbackFormState extends State<DirectorsFeedbackForm> {
             ),
             const SizedBox(height: 20),
 
-            _buildField(feedbackController, "Share your experience...", 4),
+            // Feedback text area
+            _buildField(
+              feedbackController,
+              "Share your experience...",
+              maxLines: 4,
+            ),
             const SizedBox(height: 15),
 
+            // Full Name
             _buildField(nameController, "Enter your full name"),
             const SizedBox(height: 15),
 
-            _buildField(emailController, "your@email.com"),
+            // Email
+            _buildField(
+              emailController,
+              "your@email.com",
+              keyboardType: TextInputType.emailAddress,
+              validator: (value) {
+                if (value == null || value.isEmpty) return "Required field";
+                final emailRegex = RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$');
+                if (!emailRegex.hasMatch(value)) return "Enter a valid email";
+                return null;
+              },
+            ),
             const SizedBox(height: 15),
 
-            _buildField(mobileController, "Enter your mobile number"),
+            // Mobile
+            _buildField(
+              mobileController,
+              "Enter your mobile number",
+              keyboardType: TextInputType.phone,
+              validator: (value) {
+                if (value == null || value.isEmpty) return "Required field";
+                if (value.length < 7) return "Enter a valid mobile number";
+                return null;
+              },
+            ),
             const SizedBox(height: 15),
 
+            // Role / Designation
             _buildField(roleController, "e.g., Manager, Business Owner"),
             const SizedBox(height: 20),
 
+            // Rating Row
             Row(
               children: [
                 Container(
@@ -112,49 +192,28 @@ class _DirectorsFeedbackFormState extends State<DirectorsFeedbackForm> {
                     border: Border.all(color: Colors.black12),
                   ),
                   child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
+                    child: DropdownButton<int>(
                       value: rating,
-                      items: const [
-                        DropdownMenuItem(
-                          value: "5 Stars",
-                          child: Text("5 Stars"),
-                        ),
-                        DropdownMenuItem(
-                          value: "4 Stars",
-                          child: Text("4 Stars"),
-                        ),
-                        DropdownMenuItem(
-                          value: "3 Stars",
-                          child: Text("3 Stars"),
-                        ),
-                        DropdownMenuItem(
-                          value: "2 Stars",
-                          child: Text("2 Stars"),
-                        ),
-                        DropdownMenuItem(
-                          value: "1 Stars",
-                          child: Text("1 Stars"),
-                        ),
-                      ],
+                      items: List.generate(5, (i) {
+                        final stars = 5 - i;
+                        return DropdownMenuItem(
+                          value: stars,
+                          child: Text("$stars Star${stars > 1 ? 's' : ''}"),
+                        );
+                      }),
                       onChanged: (val) {
-                        setState(() => rating = val!);
+                        if (val != null) setState(() => rating = val);
                       },
                     ),
                   ),
                 ),
-
                 const SizedBox(width: 12),
-
                 Row(
                   children: List.generate(5, (index) {
-                    int selectedStars = int.parse(
-                      rating[0],
-                    ); 
-
                     return Icon(
                       Icons.star,
                       size: 22,
-                      color: index < selectedStars
+                      color: index < rating
                           ? Colors.amber
                           : Colors.grey.shade300,
                     );
@@ -162,31 +221,92 @@ class _DirectorsFeedbackFormState extends State<DirectorsFeedbackForm> {
                 ),
               ],
             ),
+            const SizedBox(height: 20),
+
+            // Image upload
+            const Text(
+              "Upload Your Photo (Optional)",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(height: 10),
+
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.black12),
+              ),
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: isLoading ? null : pickImage,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF2796C6),
+                      foregroundColor: Colors.white,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text("Choose File"),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      fileName,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(fontSize: 14),
+                    ),
+                  ),
+                  if (selectedImage != null)
+                    IconButton(
+                      icon: const Icon(Icons.close, size: 18),
+                      onPressed: () {
+                        setState(() {
+                          selectedImage = null;
+                          fileName = "No file chosen";
+                          base64Image = "";
+                        });
+                      },
+                    ),
+                ],
+              ),
+            ),
 
             const SizedBox(height: 25),
 
+            // Submit button
             SizedBox(
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                onPressed: submitForm,
+                onPressed: isLoading ? null : submitForm,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(
-                    0xFF2796C6,
-                  ), 
+                  backgroundColor: const Color(0xFF2796C6),
                   foregroundColor: Colors.white,
-                  elevation: 4, 
+                  elevation: 4,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), 
+                    borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: const Text(
-                  "Submit Feedback",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                ),
+                child: isLoading
+                    ? const SizedBox(
+                        width: 22,
+                        height: 22,
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                          strokeWidth: 2.5,
+                        ),
+                      )
+                    : const Text(
+                        "Submit Feedback",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
               ),
             ),
-
           ],
         ),
       ),
@@ -195,17 +315,25 @@ class _DirectorsFeedbackFormState extends State<DirectorsFeedbackForm> {
 
   Widget _buildField(
     TextEditingController controller,
-    String hint, [
+    String hint, {
     int maxLines = 1,
-  ]) {
+    TextInputType keyboardType = TextInputType.text,
+    String? Function(String?)? validator,
+  }) {
     return TextFormField(
       controller: controller,
       maxLines: maxLines,
-      validator: (value) =>
-          value == null || value.isEmpty ? "Required field" : null,
+      keyboardType: keyboardType,
+      validator:
+          validator ??
+          (value) => value == null || value.isEmpty ? "Required field" : null,
       decoration: InputDecoration(
         hintText: hint,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 14,
+          vertical: 12,
+        ),
       ),
     );
   }

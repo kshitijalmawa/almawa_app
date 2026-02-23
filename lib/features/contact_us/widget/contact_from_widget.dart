@@ -54,7 +54,7 @@ class _ContactFormWidgetState extends State<ContactFormWidget> {
       emailAddress: emailController.text.trim(),
       phoneNumber: phoneController.text.trim(),
       mobileNumber: mobileController.text.trim(),
-      selecetCountry: selectedCountry!,
+      selectedCountry: selectedCountry!,
       subject: subjectController.text.trim(),
       tellUsAboutYou: messageController.text.trim(),
     );

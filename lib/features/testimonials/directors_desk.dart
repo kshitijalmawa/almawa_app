@@ -18,7 +18,6 @@ class _DirectorsDeskState extends State<DirectorsDesk> {
 
   final ImagePicker picker = ImagePicker();
 
-  // ✅ Pick Image Function
   Future<void> pickImage() async {
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
 

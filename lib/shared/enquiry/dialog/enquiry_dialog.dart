@@ -9,6 +9,7 @@ class EnquiryDialog extends StatefulWidget {
 }
 
 class _EnquiryDialogState extends State<EnquiryDialog> {
+  bool _isLoading = false;
   final _formKey = GlobalKey<FormState>();
 
   final nameController = TextEditingController();
@@ -66,6 +67,10 @@ class _EnquiryDialogState extends State<EnquiryDialog> {
       return;
     }
 
+    setState(() {
+      _isLoading = true;
+    });
+
     final response = await EnquiryService.instance.submitEnquiry(
       fullName: nameController.text.trim(),
       email: emailController.text.trim(),
@@ -74,6 +79,10 @@ class _EnquiryDialogState extends State<EnquiryDialog> {
       serviceInterestedIn: service,
       projectDetails: projectController.text.trim(),
     );
+
+    setState(() {
+      _isLoading = false;
+    });
 
     if (response != null) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -219,7 +228,7 @@ class _EnquiryDialogState extends State<EnquiryDialog> {
 
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton.icon(
+                  child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       padding: const EdgeInsets.symmetric(vertical: 14),
@@ -227,9 +236,30 @@ class _EnquiryDialogState extends State<EnquiryDialog> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    icon: const Icon(Icons.send_outlined, size: 18),
-                    label: const Text("Send Enquiry"),
-                    onPressed: _submitForm,
+                    onPressed: _isLoading ? null : _submitForm,
+                    child: _isLoading
+                        ? const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2.5,
+                              color: Colors.white,
+                            ),
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(Icons.send_outlined, size: 18),
+                              SizedBox(width: 8),
+                              Text(
+                                "Send Enquiry",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
                   ),
                 ),
               ],

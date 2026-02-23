@@ -1,4 +1,4 @@
-import 'package:almawa_app/shared/widget/apply_form_dialog.dart';
+import 'apply_form_dialog.dart';
 import 'package:flutter/material.dart';
 
 class JobCard extends StatefulWidget {
