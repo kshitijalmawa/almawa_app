@@ -40,7 +40,9 @@ class OurServicesDrawerScreen extends StatelessWidget {
                 const Divider(),
 
                 InkWell(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 12),
                     child: Row(
