@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,26 +54,31 @@ class AboutScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
+               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/team_discuss.png",
-                  width: double.infinity,
-                  height: 220,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9, // good for wide group/banner image
+                  child: Image.asset(
+                    "assets/images/team_discuss.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
+            // assets/images/team_discuss.png
             const SizedBox(height: 32),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/grp.png",
-                  width: double.infinity,
-                  height: 140,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9, // good for wide group/banner image
+                  child: Image.asset(
+                    "assets/images/grp.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -94,21 +99,24 @@ class AboutScreen extends StatelessWidget {
                 '𝐃𝐫𝐢𝐯𝐞𝐧 𝐛𝐲 𝐢𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 𝐚𝐧𝐝 𝐭𝐞𝐚𝐦𝐰𝐨𝐫𝐤, 𝐨𝐮𝐫 𝐞𝐱𝐩𝐞𝐫𝐭𝐬 𝐟𝐫𝐨𝐦 𝐈𝐓, 𝐝𝐢𝐠𝐢𝐭𝐚𝐥 𝐦𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠, 𝐚𝐧𝐝 𝐠𝐫𝐚𝐩𝐡𝐢𝐜𝐬 𝐝𝐞𝐩𝐚𝐫𝐭𝐦𝐞𝐧𝐭𝐬 𝐰𝐨𝐫𝐤 𝐡𝐚𝐧𝐝 𝐢𝐧 𝐡𝐚𝐧𝐝 𝐭𝐨 𝐜𝐫𝐞𝐚𝐭𝐞 𝐢𝐦𝐩𝐚𝐜𝐭𝐟𝐮𝐥 𝐝𝐢𝐠𝐢𝐭𝐚𝐥 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞𝐬. 𝐖𝐞 𝐟𝐨𝐜𝐮𝐬 𝐨𝐧 𝐝𝐞𝐥𝐢𝐯𝐞𝐫𝐢𝐧𝐠 𝐪𝐮𝐚𝐥𝐢𝐭𝐲, 𝐜𝐫𝐞𝐚𝐭𝐢𝐯𝐢𝐭𝐲, 𝐚𝐧𝐝 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞 𝐢𝐧 𝐞𝐯𝐞𝐫𝐲 𝐩𝐫𝐨𝐣𝐞𝐜𝐭 𝐰𝐞 𝐡𝐚𝐧𝐝𝐥𝐞.',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.grey.shade600, fontSize: 18),
-              ),
+               ),
             ),
             SizedBox(height: 32),
-            Padding(
+           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/the_way_we_work.jpg",
-                  width: double.infinity,
-                  height: 280,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9, // Perfect for section/banner images
+                  child: Image.asset(
+                    "assets/images/the_way_we_work.jpg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
+            // assets/images/the_way_we_work.jpg
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(right: 80),
@@ -135,14 +143,17 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/why_choose_us.jpg",
-                  width: double.infinity,
-                  height: 280,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9, // Perfect for section/banner images
+                  child: Image.asset(
+                    "assets/images/why_choose_us.jpg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
+            // assets/images/why_choose_us.jpg
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 60),
@@ -169,14 +180,17 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/stand_for.jpg",
-                  width: double.infinity,
-                  height: 280,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9, // Perfect for section/banner images
+                  child: Image.asset(
+                    "assets/images/stand_for.jpg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
+            // assets/images/stand_for.jpg
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 60),
@@ -241,11 +255,13 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/arshad.png",
-                  width: double.infinity,
-                  height: 400,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/arshad.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -277,27 +293,29 @@ class AboutScreen extends StatelessWidget {
                 ),
               ],
             ),
-
             SizedBox(height: 32),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/sufiyan.png",
-                  width: double.infinity,
-                  height: 400,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/shashant.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
+            // assets/images/shashant.png
             SizedBox(height: 6),
             Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 24),
                   child: Text(
-                    "Sufiyan Ali",
+                    "Shashant Pandey",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -324,14 +342,17 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/ahemad.png",
-                  width: double.infinity,
-                  height: 400,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/ahmad_new.jpg.jpeg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
+            // assets/images/ahmad_new.jpg.jpeg
             SizedBox(height: 6),
             Row(
               children: [
@@ -375,11 +396,13 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/priyanka.png",
-                  width: double.infinity,
-                  height: 400,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/priyanka.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -416,11 +439,13 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/sabeel.png",
-                  width: double.infinity,
-                  height: 400,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/sabeel.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -457,11 +482,13 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/omkar.png",
-                  width: double.infinity,
-                  height: 400,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/omkar.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -493,6 +520,255 @@ class AboutScreen extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                 child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/sanika.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            // assets/images/sanika.jpg.jpeg
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Sanika Chougule",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_04",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Divider(height: 50),
+            Text(
+              "Management \nTEAM",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+                color: Colors.black87,
+              ),
+            ),
+            Divider(height: 50),
+            Text(
+              "Graphic Designer \nTEAM",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/vaibhav.jpg.jpeg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            // assets/images/vaibhav.jpg.jpeg
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Vaibhav Virkar",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_01",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/komal.jpg (1).jpeg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            // assets/images/komal.jpg (1).jpeg
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Komal",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_02",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Divider(height: 50),
+            Text(
+              "Management \nTEAM",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/kaushal.jpeg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            //assets/images/kaushal.jpeg
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Kaushal Marathe",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_01",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4, 
+                  child: Image.asset(
+                    "assets/images/dilip.jpg.jpeg",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Dilip Khandagale",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_02",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Divider(height: 50),
             Text(
               "Hr & Management",
@@ -508,11 +784,13 @@ class AboutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/images/priyanka.png",
-                  width: double.infinity,
-                  height: 400,
-                  fit: BoxFit.cover,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/priyanka.png",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

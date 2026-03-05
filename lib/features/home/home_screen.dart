@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/our_services/cloud_solutions.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:almawa_app/features/our_services/ai_services.dart';
 import 'package:almawa_app/features/our_services/digital_marketing.dart';
@@ -46,40 +47,56 @@ class HomeScreen extends StatelessWidget {
 
           ClipRRect(
             borderRadius: BorderRadius.circular(14),
-            child: Image.asset(
-              "assets/images/team_discuss.png",
-              height: 150,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            child: AspectRatio(
+              aspectRatio: 16 / 9, // Good for banner-style images
+              child: Image.asset(
+                "assets/images/team_discuss.png",
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],
       ),
     ),
   );
+  // assets/images/team_discuss.png
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leadingWidth: 160,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 18),
-          child: Row(
-            children: [Image.asset('assets/images/logoblack.png', height: 64)],
-          ),
-        ),
-        actions: [
-          Builder(
-            builder: (context) => IconButton(
-              icon: const Icon(Icons.menu, color: Colors.black),
-              onPressed: () => Scaffold.of(context).openEndDrawer(),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(65), // 👈 AppBar height
+        child: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          centerTitle: false,
+
+          leadingWidth: 150,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 20), // left spacing
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Image.asset(
+                'assets/images/logoblack.png',
+                height: 50,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
-        ],
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20), // right spacing
+              child: Builder(
+                builder: (context) => IconButton(
+                  icon: const Icon(Icons.menu, color: Colors.black, size: 28),
+                  onPressed: () => Scaffold.of(context).openEndDrawer(),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       endDrawer: const AppDrawer(),
 
@@ -177,11 +194,13 @@ class HomeScreen extends StatelessWidget {
 
                       ClipRRect(
                         borderRadius: BorderRadius.circular(14),
-                        child: Image.asset(
-                          "assets/images/our_mission.jpg",
-                          height: 150,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
+                        child: AspectRatio(
+                          aspectRatio: 16 / 9, 
+                          child: Image.asset(
+                            "assets/images/our_mission.jpg",
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ],
@@ -229,17 +248,20 @@ class HomeScreen extends StatelessWidget {
 
                       ClipRRect(
                         borderRadius: BorderRadius.circular(14),
-                        child: Image.asset(
-                          "assets/images/our_values2.jpg",
-                          height: 150,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
+                        child: AspectRatio(
+                          aspectRatio: 16 / 9, // good for banner-style images
+                          child: Image.asset(
+                            "assets/images/our_values2.jpg",
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
+              // assets/images/our_values2.jpg
               const SizedBox(height: 24),
               Padding(
                 padding: const EdgeInsets.all(14.0),
@@ -376,7 +398,12 @@ class HomeScreen extends StatelessWidget {
                   "Disaster Recovery",
                   "Cloud Optimization",
                 ],
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CloudSolutions()),
+                  );
+                },
               ),
 
               SizedBox(height: 36),

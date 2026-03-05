@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../about/about_screen.dart';
 import '../../career/careers_screen.dart';
 import '../../our_work/demo_websites_screen.dart';
-import '../../our_services/our_service_drawer_screen.dart';
+import '../../our_services/widget/our_service_drawer_screen.dart';
 import '../../our_work/our_work_screen.dart';
 
 import '../../testimonials/directors_desk.dart';

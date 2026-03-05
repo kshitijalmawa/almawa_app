@@ -206,6 +206,10 @@ class _EnquiryDialogState extends State<EnquiryDialog> {
                       value: "AI Services",
                       child: Text("AI Services"),
                     ),
+                    DropdownMenuItem(
+                      value: "Cloud Solutions",
+                      child: Text("Cloud Solutions"),
+                    ),
                   ],
                   onChanged: (val) {
                     setState(() => service = val!);
