@@ -566,16 +566,6 @@ class AboutScreen extends StatelessWidget {
             ),
             Divider(height: 50),
             Text(
-              "Management \nTEAM",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w800,
-                color: Colors.black87,
-              ),
-            ),
-            Divider(height: 50),
-            Text(
               "Graphic Designer \nTEAM",
               textAlign: TextAlign.center,
               style: TextStyle(
