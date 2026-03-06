@@ -31,7 +31,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/image.png"  
+  image_path: "assets/images/al_mawa.png"  
 
 
 flutter:

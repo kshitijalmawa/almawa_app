@@ -16,7 +16,7 @@ class DigitalMarketing extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white, 
         elevation: 0,
         leadingWidth: 160,
         leading: Padding(
@@ -214,6 +214,107 @@ class DigitalMarketing extends StatelessWidget {
                         'Measurable Results',
                       ],
                        onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
+                      },
+                    ),
+                    // New
+                    SizedBox(height: 20),
+                    ServiceCard(
+                      icon: Icons.message_outlined,
+                      badgeText: 'Marketing',
+                      title: 'RCS Messaging Services',
+                      description:
+                          'Rich, interactive messaging campaigns with branded experiences and higher engagement.',
+                      features: const [
+                        'Verified sender & branding',
+                        'Rich media (images, cards, carousels)',
+                        'Buttons & quick replies',
+                        'Campaign reporting & insights',
+                      ],
+                      onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    ServiceCard(
+                      icon: Icons.notifications_outlined,
+                      badgeText: 'Marketing',
+                      title: 'Push Notification Services',
+                      description:
+                          'Instant, high-visibility notifications to re-engage users and drive repeat actions.',
+                      features: const [
+                        'Web & mobile push setup',
+                        'Segmentation & targeting',
+                        'Personalized messaging',
+                        'A/B testing & analytics',
+                      ],
+                      onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    ServiceCard(
+                      icon: Icons.schema,
+                      badgeText: 'Marketing',
+                      title: 'Marketing Automation',
+                      description:
+                          'Automate your marketing workflows to nurture leads and convert customers at scale.',
+                      features: const [
+                        'Lead nurturing workflows',
+                        'Behavior-based triggers',
+                        'Audience segmentation',
+                        'CRM & tool integrations',
+                      ],
+                      onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    ServiceCard(
+                      icon: Icons.route,
+                      badgeText: 'Marketing',
+                      title: 'Customer Journey & Drip Campaigns',
+                      description:
+                          'Design multi-step drip campaigns that guide customers from awareness to conversion.',
+                      features: const [
+                        'Journey mapping',
+                        'Multi-channel sequences',
+                        'Personalization rules',
+                        'Performance optimization',
+                      ],
+                      onEnquire: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const EnquiryDialog(),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    ServiceCard(
+                      icon: Icons.smart_toy,
+                      badgeText: 'Marketing',
+                      title: 'Chatbot Marketing Services',
+                      description:
+                          'Conversational chatbots that capture leads, qualify prospects, and support customers 24/7.',
+                      features: const [
+                        'Lead capture & qualification',
+                        'WhatsApp / website chatbots',
+                        'Auto replies & FAQs',
+                        'Handover to human agents',
+                      ],
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
