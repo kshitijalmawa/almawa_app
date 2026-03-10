@@ -342,7 +342,7 @@ class _ApplyFormDialogState extends State<ApplyFormDialog> {
                                     ),
                                   )
                                 : const Text(
-                                    "Submit Application",
+                                    "Submit",
                                     style: TextStyle(color: Colors.white),
                                   ),
                           ),

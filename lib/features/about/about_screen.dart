@@ -183,7 +183,7 @@ class AboutScreen extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 16 / 9, // Perfect for section/banner images
                   child: Image.asset(
-                    "assets/images/stand_for.jpg",
+                    "assets/images/stand_for.png",
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
