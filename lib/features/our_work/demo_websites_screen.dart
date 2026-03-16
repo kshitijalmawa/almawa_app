@@ -158,6 +158,14 @@ class DemoWebsitesScreen extends StatelessWidget {
                   tags: ["NEXT.JS", "TAILWIND"],
                   url: "https://feesy-school-hub.vercel.app/",
                 ),
+                DemoWebsiteCard(
+                  image: "assets/images/priyankaplayhouse.png",
+                  title: "Priyanka Play House",
+                  description:
+                      "Priyanka Play House is a fun and nurturing space for children that focuses on learning through play, creativity, and early childhood development in a safe and joyful environment",
+                  tags: ["NEXT.JS", "TAILWIND"],
+                  url: "https://priyanka-playful-canvas.vercel.app/",
+                ),
               ],
             ),
             SizedBox(height: 40),
