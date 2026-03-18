@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/home/widgets/changing_word.dart';
 import 'package:almawa_app/features/our_services/cloud_solutions.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:almawa_app/features/our_services/ai_services.dart';
@@ -127,14 +128,28 @@ class HomeScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              const Text(
-                "𝐄𝐦𝐩𝐨𝐰𝐞𝐫𝐢𝐧𝐠 𝐁𝐮𝐬𝐢𝐧𝐞𝐬𝐬𝐞𝐬,\n𝐓𝐫𝐚𝐧𝐬𝐟𝐨𝐫𝐦𝐢𝐧𝐠",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.w400,
-                  height: 1.3,
-                ),
+              Column(
+                children: const [
+                  Text(
+                    "Empowering Businesses,",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.w400),
+                  ),
+                  SizedBox(height: 4),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Transforming ",
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      ChangingWord(),
+                    ],
+                  ),
+                ],
               ),
 
               const SizedBox(height: 32),

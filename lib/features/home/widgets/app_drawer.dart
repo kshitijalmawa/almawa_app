@@ -1,4 +1,5 @@
 import 'package:almawa_app/features/contact_us/contact_us_screen.dart';
+import 'package:almawa_app/features/our_programs/screens/our_programs.dart';
 import 'package:flutter/material.dart';
 
 import '../../about/about_screen.dart';
@@ -115,6 +116,18 @@ class AppDrawer extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (_) => const OurServicesDrawerScreen(),
                             ),
+                          );
+                        },
+                      ),
+
+                      _drawerItem(
+                        context,
+                        Icons.code,
+                        "Our Programs",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => OurPrograms()),
                           );
                         },
                       ),
