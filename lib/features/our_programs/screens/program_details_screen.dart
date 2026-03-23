@@ -1,5 +1,5 @@
+import 'package:almawa_app/features/contact_us/contact_us_screen.dart';
 import 'package:almawa_app/features/our_programs/model/program_details.dart';
-import 'package:almawa_app/features/our_programs/widget/internship_application_dialog.dart';
 import 'package:almawa_app/features/our_programs/widget/scrolling_strip.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
@@ -79,11 +79,10 @@ class _ProgramDetailsScreenState extends State<ProgramDetailsScreen> {
                     height: 48,
                     child: ElevatedButton(
                       onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => InternshipApplicationDialog(
-                            courseSlug: widget.program.slug,
-                            courseName: widget.program.title,
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ContactUsScreen(),
                           ),
                         );
                       },
@@ -426,11 +425,10 @@ class _ProgramDetailsScreenState extends State<ProgramDetailsScreen> {
                       height: 50,
                       child: ElevatedButton(
                         onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) => InternshipApplicationDialog(
-                              courseSlug: widget.program.slug,
-                              courseName: widget.program.title,
+                         Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ContactUsScreen(),
                             ),
                           );
                         },
