@@ -6,7 +6,6 @@ class ProgramService {
   static const String _baseUrl =
       'https://www.al-mawa.international/api/courses';
 
-  /// Fetch all programs
   static Future<List<ProgramModel>> getAllPrograms() async {
     try {
       final response = await http.get(
