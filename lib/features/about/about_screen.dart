@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/about/widget/jaipur_branch_section.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
 
@@ -813,6 +814,7 @@ class AboutScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
+            const JaipurBranchSection(),
             const AppFooter(),
           ],
         ),
