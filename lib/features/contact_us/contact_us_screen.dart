@@ -193,6 +193,16 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
             SizedBox(height: 14),
             ReachUsCard(
               icon: Icons.location_on_outlined,
+              title: "Jaipur Branch",
+              lines: const [
+                "J, Signature Elite, Connekt Co-Working Office Spaces 4th Floor Above Westside Showroom, 7th Govind Marg, Narayan Singh Circle, Jaipur Rajasthan - 302004",
+              ],
+              footerText:
+                  "Visit our Jaipur office",
+            ),
+            SizedBox(height: 14),
+            ReachUsCard(
+              icon: Icons.punch_clock_outlined,
               title: "Working Hours",
               lines: const ["10:00 AM - 06:00 PM"],
               footerText: "",
