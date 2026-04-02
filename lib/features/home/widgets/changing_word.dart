@@ -16,7 +16,7 @@ class _ChangingWordState extends State<ChangingWord> {
   void initState() {
     super.initState();
 
-    Timer.periodic(const Duration(milliseconds: 1500), (timer) {
+    Timer.periodic(const Duration(seconds: 3), (timer) {
       setState(() {
         index = (index + 1) % words.length;
       });

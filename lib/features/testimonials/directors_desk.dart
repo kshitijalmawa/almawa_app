@@ -24,7 +24,7 @@ class _DirectorsDeskState extends State<DirectorsDesk> {
     if (image != null) {
       setState(() {
         selectedImage = File(image.path);
-        fileName = image.name; // shows file name
+        fileName = image.name; 
       });
     }
   }

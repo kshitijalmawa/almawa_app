@@ -131,7 +131,7 @@ class JaipurBranchSection extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 48),
 
           /// Jaipur Images
           Column(

@@ -353,7 +353,6 @@ class AboutScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // assets/images/ahmad_new.jpg.jpeg
             SizedBox(height: 6),
             Row(
               children: [
@@ -815,6 +814,7 @@ class AboutScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const JaipurBranchSection(),
+            const SizedBox(height: 24),
             const AppFooter(),
           ],
         ),

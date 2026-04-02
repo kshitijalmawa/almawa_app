@@ -1,5 +1,5 @@
 import 'package:almawa_app/features/our_programs/model/program_details.dart';
-import 'package:almawa_app/features/our_programs/screens/program_details_screen.dart';
+import 'package:almawa_app/features/our_programs/screens/traning_and_internship/program_details_screen.dart';
 import 'package:almawa_app/features/our_programs/services/our_programs_service.dart';
 import 'package:almawa_app/features/our_programs/screens/traning_and_internship/widget/apply_from_dialog.dart';
 import 'package:almawa_app/features/our_programs/widget/bene_fit_item.dart';
@@ -12,15 +12,15 @@ import 'package:almawa_app/features/our_programs/widget/testimonial_card.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
 
-class OurPrograms extends StatefulWidget {
+class TraningAndInternshipScreen extends StatefulWidget {
   final String jobTitle;
-  const OurPrograms({super.key, required this.jobTitle});
+  const TraningAndInternshipScreen({super.key, required this.jobTitle});
 
   @override
-  State<OurPrograms> createState() => _OurProgramsState();
+  State<TraningAndInternshipScreen> createState() => _TraningAndInternshipScreenState();
 }
 
-class _OurProgramsState extends State<OurPrograms> {
+class _TraningAndInternshipScreenState extends State<TraningAndInternshipScreen> {
   late Future<List<ProgramModel>> _programsFuture;
   final GlobalKey _coursesKey = GlobalKey();
 
