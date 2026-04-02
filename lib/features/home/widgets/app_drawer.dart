@@ -209,13 +209,6 @@ class AppDrawer extends StatelessWidget {
                           ),
                         ],
                       ),
-                      //  _drawerItem(
-                      //   context,
-                      //   Icons.logout,
-                      //   "Logout",
-                      //   onTap: () => Navigator.pop(context),
-                      // ),
-
                       const SizedBox(height: 30),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
