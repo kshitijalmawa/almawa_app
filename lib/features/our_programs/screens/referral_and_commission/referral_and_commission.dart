@@ -282,10 +282,10 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
                 height: 48,
                 child: ElevatedButton(
                   onPressed: () {
-                    // showDialog(
-                    //   context: context,
-                    //   builder: (context) => const FranchiseFormDialog(),
-                    // );
+                     showDialog(
+                      context: context,
+                      builder: (context) => const ReferralFormDialog(),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF1E88E5),

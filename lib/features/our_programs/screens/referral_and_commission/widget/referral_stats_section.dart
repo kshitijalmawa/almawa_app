@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/our_programs/screens/referral_and_commission/widget/referral_form_dialog.dart';
 import 'package:flutter/material.dart';
 
 class ReferralStatsSection extends StatelessWidget {
@@ -57,7 +58,12 @@ class ReferralStatsSection extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                   showDialog(
+                    context: context,
+                    builder: (context) => const ReferralFormDialog(),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   foregroundColor: const Color(0xFF1E88E5),

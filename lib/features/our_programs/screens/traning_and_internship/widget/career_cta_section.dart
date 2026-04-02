@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/our_programs/screens/traning_and_internship/widget/apply_from_dialog.dart';
 import 'package:flutter/material.dart';
 
 class CareerCTASection extends StatelessWidget {
@@ -63,7 +64,11 @@ class CareerCTASection extends StatelessWidget {
             height: 50,
             child: ElevatedButton(
               onPressed: () {
-                
+                showDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  builder: (context) => const ApplyFormProgram(),
+                ); 
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,

@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/our_programs/screens/franchise/widget/franchise_form_dialog.dart';
 import 'package:flutter/material.dart';
 
 class FranchiseRequirementsSection extends StatelessWidget {
@@ -47,7 +48,7 @@ class FranchiseRequirementsSection extends StatelessWidget {
     );
   }
 
-  Widget _buildCTASection() {
+  Widget _buildCTASection(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
@@ -80,7 +81,12 @@ class FranchiseRequirementsSection extends StatelessWidget {
 
           /// Button
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => const FranchiseFormDialog(),
+              );
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.white,
               foregroundColor: const Color(0xFF1E88E5),
@@ -104,7 +110,6 @@ class FranchiseRequirementsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        /// Requirements List
         _buildRequirement(
           "Business Acumen",
           "Strong business understanding and entrepreneurial spirit",
@@ -121,8 +126,7 @@ class FranchiseRequirementsSection extends StatelessWidget {
 
         const SizedBox(height: 30),
 
-        /// CTA Section
-        _buildCTASection(),
+        _buildCTASection(context),
       ],
     );
   }
