@@ -1,12 +1,13 @@
 import 'package:almawa_app/features/contact_us/contact_us_screen.dart';
+import 'package:almawa_app/features/our_programs/screens/franchise/franchise_screen.dart';
+import 'package:almawa_app/features/our_programs/screens/referral_and_commission/referral_and_commission.dart';
+import 'package:almawa_app/features/our_programs/screens/traning_and_internship/traning_and_internship_screen.dart.dart';
 import 'package:flutter/material.dart';
-
 import '../../about/about_screen.dart';
 import '../../career/careers_screen.dart';
 import '../../our_work/demo_websites_screen.dart';
 import '../../our_services/widget/our_service_drawer_screen.dart';
 import '../../our_work/our_work_screen.dart';
-
 import '../../testimonials/directors_desk.dart';
 import '../../testimonials/testimonials.dart';
 
@@ -117,6 +118,48 @@ class AppDrawer extends StatelessWidget {
                             ),
                           );
                         },
+                      ),
+
+                      ExpansionTile(
+                        tilePadding: EdgeInsets.zero,
+                        childrenPadding: const EdgeInsets.only(left: 55),
+                        leading: const Icon(Icons.code),
+                        title: const Text(
+                          "Our Programs",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        children: [
+                          _subDrawerItem(
+                            context,
+                            "Franchise",
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (_) => FranchiseScreen()),
+                              );
+                            },
+                          ),
+                          _subDrawerItem(
+                            context,
+                            "Referral & Commission",
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (_) => ReferralAndCommission()),
+                              );
+                            },
+                          ),
+                          _subDrawerItem(
+                            context,
+                            "Training & Internship",
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (_) => TraningAndInternshipScreen(jobTitle: 'Training & Internship')),
+                              );
+                            },
+                          ),
+                        ],
                       ),
 
                       _drawerItem(

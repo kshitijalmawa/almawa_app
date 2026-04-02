@@ -228,7 +228,7 @@ class OurWorkScreen extends StatelessWidget {
                 children: const [
                   SocialWorkCard(
                     title: "Nitin Hardware",
-                    tag: "SOCIAL MEDIA MARKETING",
+                    tag: "WEBSITE DEVELOPMENT",
                     isLive: true,
                     logoPath: "assets/images/nitin.png",
                     websiteUrl: 'https://www.nitinhardware.in/',
@@ -243,10 +243,40 @@ class OurWorkScreen extends StatelessWidget {
                 children: const [
                   SocialWorkCard(
                     title: "Life Style Home Decor",
-                    tag: "SOCIAL MEDIA MARKETING",
+                    tag: "WEBSITE DEVELOPMENT",
                     isLive: true,
                     logoPath: "assets/images/lifestyle.png", 
                     websiteUrl: 'https://www.lifestylehomedecor.in/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Soni 'i' Residential World School" ,
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/sonai.png",
+                    websiteUrl: 'https://www.lifestylehomedecor.in/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Ticket Management CRM",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/ticket.png",
+                    websiteUrl: 'https://ticket-management-crm.vercel.app/login',
                   ),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/about/widget/jaipur_branch_section.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
 
@@ -352,7 +353,6 @@ class AboutScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // assets/images/ahmad_new.jpg.jpeg
             SizedBox(height: 6),
             Row(
               children: [
@@ -812,6 +812,8 @@ class AboutScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 24),
+            const JaipurBranchSection(),
             const SizedBox(height: 24),
             const AppFooter(),
           ],

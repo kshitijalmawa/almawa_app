@@ -46,9 +46,9 @@ class AppFooter extends StatelessWidget {
               ),
             ),
           ),
-          
+
           const SizedBox(height: 28),
-          
+
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
@@ -61,9 +61,9 @@ class AppFooter extends StatelessWidget {
               ),
             ),
           ),
-          
+
           const SizedBox(height: 20),
-          
+
           /// Email
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -73,11 +73,7 @@ class AppFooter extends StatelessWidget {
               },
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.email_outlined,
-                    color: Colors.white70,
-                    size: 20,
-                  ),
+                  Icon(Icons.email_outlined, color: Colors.white70, size: 20),
                   SizedBox(width: 12),
                   Text(
                     "business@al-mawa.international",
@@ -87,9 +83,9 @@ class AppFooter extends StatelessWidget {
               ),
             ),
           ),
-          
+
           const SizedBox(height: 12),
-          
+
           /// Phone
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -99,11 +95,7 @@ class AppFooter extends StatelessWidget {
               },
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.phone_outlined,
-                    color: Colors.white70,
-                    size: 20,
-                  ),
+                  Icon(Icons.phone_outlined, color: Colors.white70, size: 20),
                   SizedBox(width: 12),
                   Text(
                     "+91 9561179693 | 9511991736",
@@ -113,12 +105,12 @@ class AppFooter extends StatelessWidget {
               ),
             ),
           ),
-          
+
           const SizedBox(height: 12),
-          
+
           /// Location
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 32),
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 14),
             child: GestureDetector(
               onTap: () {
                 launchURL(
@@ -133,9 +125,38 @@ class AppFooter extends StatelessWidget {
                     size: 20,
                   ),
                   SizedBox(width: 12),
-                  Text(
-                    "AL-MAWA INTERNATIONAL Location",
-                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                  Expanded(
+                    child: Text(
+                      "AL-MAWA INTERNATIONAL PUNE Location",
+                      style: TextStyle(color: Colors.white70, fontSize: 14),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 32),
+            child: GestureDetector(
+              onTap: () {
+                launchURL(
+                  "https://www.google.com/maps/place/Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur/@26.8991882,75.8142119,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgIDLm72aFA!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHVAweq_aZ2I4h_rRh6zk-z6JqyDf_bKnmiPRnk8QVp1V1mlBek-UA4W0rK-SFsELkT2NQlVdG9YTyJ4e0EgCI5B0tQeRn-LDn98A5khN3YbQtqYtpiu1KXDsgMRvSwnF0Bf8ur2J2FT%3Dw152-h86-k-no!7i7680!8i4320!4m7!3m6!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!8m2!3d26.8993959!4d75.8143621!10e5!16s%2Fg%2F11y3lncpy1?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D",
+                );
+              },
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Icon(
+                    Icons.location_on_outlined,
+                    color: Colors.white70,
+                    size: 20,
+                  ),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      "AL-MAWA INTERNATIONAL JAIPUR Location",
+                      style: TextStyle(color: Colors.white70, fontSize: 14),
+                    ),
                   ),
                 ],
               ),
@@ -151,7 +172,11 @@ class AppFooter extends StatelessWidget {
               children: [
                 const Text(
                   "© 2026 AI Mawa International. All rights reserved.",
-                  style: TextStyle(color: Colors.white70, fontSize: 14,fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
 
                 const SizedBox(height: 16),
@@ -205,9 +230,35 @@ class AppFooter extends StatelessWidget {
                         size: 26,
                       ),
                     ),
+                    const SizedBox(width: 18),
+                    IconButton(
+                      onPressed: () {
+                        launchURL(
+                          "https://www.youtube.com/@Al.mawagrowthacademy",
+                        );
+                      },
+                      icon: const FaIcon(
+                        FontAwesomeIcons.youtube,
+                        color: Colors.white,
+                        size: 26,
+                      ),
+                    ),
+                     const SizedBox(width: 18),
+                    IconButton(
+                      onPressed: () {
+                        launchURL(
+                          "https://www.facebook.com/almawainternational",
+                        );
+                      },
+                      icon: const FaIcon(
+                        FontAwesomeIcons.facebook,
+                        color: Colors.white,
+                        size: 26,
+                      ),
+                    ),
                   ],
                 ),
-                SizedBox(height: 20,)
+                SizedBox(height: 20),
               ],
             ),
           ),

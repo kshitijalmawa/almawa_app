@@ -1,3 +1,5 @@
+import 'package:almawa_app/features/testimonials/model/review_model.dart';
+import 'package:almawa_app/features/testimonials/services/review_service.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
 
@@ -102,7 +104,140 @@ class Testimonials extends StatelessWidget {
                       _TagChip(text: "STRATEGY • DESIGN • DEVELOPMENT"),
                     ],
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 40),
+
+                  FutureBuilder<List<ReviewModel>>(
+                    future: ReviewService.instance.getReviews(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(child: CircularProgressIndicator());
+                      }
+
+                      if (snapshot.hasError) {
+                        return Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Text(
+                              "Error loading testimonials: ${snapshot.error}",
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                color: Colors.red,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+
+                      if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                        return const Center(
+                          child: Text("No testimonials available"),
+                        );
+                      }
+
+                      final reviews = snapshot.data!;
+
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: reviews.length,
+                        itemBuilder: (context, index) {
+                          final review = reviews[index];
+
+                          return Card(
+                            margin: const EdgeInsets.symmetric(
+                              horizontal: 22,
+                              vertical: 10,
+                            ),
+                            elevation: 3,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(18),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // Profile Row
+                                  Row(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 22,
+                                        backgroundColor: Colors.grey.shade300,
+                                        backgroundImage: review.image.isNotEmpty
+                                            ? NetworkImage(review.image)
+                                            : null,
+                                        child: review.image.isEmpty
+                                            ? const Icon(
+                                                Icons.person,
+                                                color: Colors.white,
+                                              )
+                                            : null,
+                                      ),
+
+                                      const SizedBox(width: 12),
+
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              review.name,
+                                              style: const TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+
+                                            Text(
+                                              review.designation,
+                                              style: const TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.black54,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+
+                                  const SizedBox(height: 15),
+
+                                  // Feedback
+                                  Text(
+                                    review.feedback,
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      height: 1.5,
+                                      color: Colors.black87,
+                                    ),
+                                  ),
+
+                                  const SizedBox(height: 12),
+
+                                  // Rating Row
+                                  Row(
+                                    children: List.generate(
+                                      review.rating,
+                                      (index) => const Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
+
+                  const SizedBox(height: 40),
                 ],
               ),
             ),
