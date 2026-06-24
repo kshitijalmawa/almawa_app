@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:almawa_app/features/testimonials/widget/director_feedback_form.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class DirectorsDesk extends StatefulWidget {
   const DirectorsDesk({super.key});
@@ -13,22 +10,6 @@ class DirectorsDesk extends StatefulWidget {
 }
 
 class _DirectorsDeskState extends State<DirectorsDesk> {
-  File? selectedImage;
-  String fileName = "No file chosen";
-
-  final ImagePicker picker = ImagePicker();
-
-  Future<void> pickImage() async {
-    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
-
-    if (image != null) {
-      setState(() {
-        selectedImage = File(image.path);
-        fileName = image.name; 
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,5 +195,3 @@ class _FeedbackCard extends StatelessWidget {
     );
   }
 }
-
-
