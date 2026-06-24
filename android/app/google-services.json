@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "422248448955",
+    "project_id": "al-mawa-302d7",
+    "storage_bucket": "al-mawa-302d7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422248448955:android:ea66bc9e9b7e88f4eeba9e",
+        "android_client_info": {
+          "package_name": "com.international.almawa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR48A26zelQfwoIw2f0oUqrRiHcT70oCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
