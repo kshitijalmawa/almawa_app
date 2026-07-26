@@ -1,12 +1,13 @@
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/our_work/widget/card_widget.dart';
 import 'package:flutter/material.dart';
+
 class OurWorkScreen extends StatelessWidget {
   const OurWorkScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
@@ -25,7 +26,10 @@ class OurWorkScreen extends StatelessWidget {
 
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),
@@ -131,8 +135,9 @@ class OurWorkScreen extends StatelessWidget {
                     title: "Nitin Hardware",
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
-                    logoPath: "assets/images/nitin.png", 
-                    websiteUrl: 'https://www.instagram.com/nitinhardwarepune?igsh=bGgwdmJycDVrcG9x',
+                    logoPath: "assets/images/nitin.png",
+                    websiteUrl:
+                        'https://www.instagram.com/nitinhardwarepune?igsh=bGgwdmJycDVrcG9x',
                   ),
                 ],
               ),
@@ -147,7 +152,8 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/lifestyle.png",
-                    websiteUrl: 'https://www.instagram.com/lifestylehomedecorpune?igsh=cGJ3NThkbGZwYWRw',
+                    websiteUrl:
+                        'https://www.instagram.com/lifestylehomedecorpune?igsh=cGJ3NThkbGZwYWRw',
                   ),
                 ],
               ),
@@ -162,7 +168,8 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/chocolate.png",
-                    websiteUrl: 'https://www.instagram.com/thechocolateroom_fcroad?igsh=MW8yeXcya3ZnbDJwNA==',
+                    websiteUrl:
+                        'https://www.instagram.com/thechocolateroom_fcroad?igsh=MW8yeXcya3ZnbDJwNA==',
                   ),
                 ],
               ),
@@ -177,7 +184,8 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/hotel.png",
-                    websiteUrl: 'https://www.instagram.com/hotel_rest_inn?igsh=MXJtNjFuamh2NzBycg==',
+                    websiteUrl:
+                        'https://www.instagram.com/hotel_rest_inn?igsh=MXJtNjFuamh2NzBycg==',
                   ),
                 ],
               ),
@@ -192,7 +200,8 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "SOCIAL MEDIA MARKETING",
                     isLive: true,
                     logoPath: "assets/images/divyansh.png",
-                    websiteUrl: 'https://www.instagram.com/divyyansh_fashion_?igsh=MXc5eW1oZmJoYjVhMQ==',
+                    websiteUrl:
+                        'https://www.instagram.com/divyyansh_fashion_?igsh=MXc5eW1oZmJoYjVhMQ==',
                   ),
                 ],
               ),
@@ -221,21 +230,6 @@ class OurWorkScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 22),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                children: const [
-                  SocialWorkCard(
-                    title: "Nitin Hardware",
-                    tag: "WEBSITE DEVELOPMENT",
-                    isLive: true,
-                    logoPath: "assets/images/nitin.png",
-                    websiteUrl: 'https://www.nitinhardware.in/',
-                  ),
-                ],
-              ),
-            ),
             const SizedBox(height: 12),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -245,7 +239,7 @@ class OurWorkScreen extends StatelessWidget {
                     title: "Life Style Home Decor",
                     tag: "WEBSITE DEVELOPMENT",
                     isLive: true,
-                    logoPath: "assets/images/lifestyle.png", 
+                    logoPath: "assets/images/lifestyle.png",
                     websiteUrl: 'https://www.lifestylehomedecor.in/',
                   ),
                 ],
@@ -257,7 +251,7 @@ class OurWorkScreen extends StatelessWidget {
               child: Column(
                 children: const [
                   SocialWorkCard(
-                    title: "Soni 'i' Residential World School" ,
+                    title: "Soni 'i' Residential World School",
                     tag: "WEBSITE DEVELOPMENT",
                     isLive: true,
                     logoPath: "assets/images/sonai.png",
@@ -276,7 +270,202 @@ class OurWorkScreen extends StatelessWidget {
                     tag: "WEBSITE DEVELOPMENT",
                     isLive: true,
                     logoPath: "assets/images/ticket.png",
-                    websiteUrl: 'https://ticket-management-crm.vercel.app/login',
+                    websiteUrl:
+                        'https://ticket-management-crm.vercel.app/login',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Suraj Dry Fruits",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/suraj_dryfruit_1.png",
+                    websiteUrl: 'https://www.surajnaturodryfruits.online/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Karyon",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/karyon.png",
+                    websiteUrl: 'https://www.karyoncollege.com/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "SP Art Hub",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/sp_art.png",
+                    websiteUrl:
+                        'https://sp-art-hub-main-updated-website.vercel.app/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Erudition Infinite",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/erudition_infinite.png",
+                    websiteUrl: 'https://www.eruditioninfinite.com/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Morpankh Saree",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/morpankh.png",
+                    websiteUrl: 'https://www.morpankhsaree.com/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "KHM Infra",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/khm.png",
+                    websiteUrl: 'https://khm-five.vercel.app/',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Text(
+                "Our Software Development",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 8),
+
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Text(
+                "Cutting-edge software solutions and intelligent CRM systems that empower your team, "
+                "automate operations, and unlock new growth opportunities for your business.",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black54,
+                  height: 1.5,
+                ),
+              ),
+            ),
+            SizedBox(height: 36),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Nitin Hardware",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/nitin.png",
+                    websiteUrl: 'https://www.nitinhardware.in/',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 22),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Infinity Loan Services",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/infinity.png",
+                    websiteUrl: 'https://www.infinityloanservices.com/',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 22),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Fortune Loan Services",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/fortune.png",
+                    websiteUrl: 'https://fortuneloan.services/',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 22),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Sona'i School Fee Receipt Management",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/sonai.png",
+                    websiteUrl:
+                        'https://sonai-software-zeta.vercel.app/admin-login?from=/',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 22),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: const [
+                  SocialWorkCard(
+                    title: "Sp-Arts Erp System",
+                    tag: "WEBSITE DEVELOPMENT",
+                    isLive: true,
+                    logoPath: "assets/images/sp_software.png",
+                    websiteUrl: 'https://sp-art-erp.vercel.app/student/login',
                   ),
                 ],
               ),

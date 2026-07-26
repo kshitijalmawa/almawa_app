@@ -1,4 +1,5 @@
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/about/about_screen.dart';
 import 'package:almawa_app/features/career/widget/benifit_item_card.dart';
 import 'package:almawa_app/features/our_services/widget/call_to_action_button.dart';
@@ -12,7 +13,6 @@ class GraphicDesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
@@ -31,7 +31,10 @@ class GraphicDesign extends StatelessWidget {
 
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),
@@ -139,7 +142,7 @@ class GraphicDesign extends StatelessWidget {
                         'Color Schemes',
                         'Typography Selection',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -159,7 +162,7 @@ class GraphicDesign extends StatelessWidget {
                         'Advertisement Design',
                         'Promotional Graphics',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -179,7 +182,7 @@ class GraphicDesign extends StatelessWidget {
                         'Digital Ads',
                         'Web Graphics',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -199,7 +202,7 @@ class GraphicDesign extends StatelessWidget {
                         'Icons & Illustrations',
                         'User Interface Design',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -239,7 +242,7 @@ class GraphicDesign extends StatelessWidget {
                         'GIF Creation',
                         'Interactive Media',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -259,7 +262,7 @@ class GraphicDesign extends StatelessWidget {
                         'Character Design',
                         'Infographics',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -279,7 +282,7 @@ class GraphicDesign extends StatelessWidget {
                         'Catalog Design',
                         'Print Materials',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -299,7 +302,7 @@ class GraphicDesign extends StatelessWidget {
                         'Brand Applications',
                         'Product Graphics',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -319,7 +322,7 @@ class GraphicDesign extends StatelessWidget {
                         'AR/VR Graphics',
                         'Interactive Design',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),
@@ -339,7 +342,7 @@ class GraphicDesign extends StatelessWidget {
                         'Marketing Effectiveness',
                         'Customer Trust',
                       ],
-                       onEnquire: () {
+                      onEnquire: () {
                         showDialog(
                           context: context,
                           builder: (_) => const EnquiryDialog(),

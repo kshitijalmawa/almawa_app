@@ -2,7 +2,7 @@ name: almawa_app
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0 #flutter build appbundle --build-name=1.0.0 --build-number=4
+version: 1.0.1+5 #flutter build appbundle --build-name=1.0.1 --build-number=5
 
 environment:
   sdk: ^3.9.2
@@ -20,6 +20,7 @@ dependencies:
   image_picker: ^1.2.1
   http: ^1.6.0
   firebase_core: ^4.6.0
+  flutter_svg: ^2.3.0
 
 
 dev_dependencies:
@@ -32,7 +33,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/al_mawa.png"  
+  image_path: "assets/images/app_logo.png"  
 
 
 flutter:

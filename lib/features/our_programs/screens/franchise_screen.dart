@@ -1,4 +1,5 @@
 import 'package:almawa_app/features/our_programs/screens/franchise/widget/franchise_feature_card.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/our_programs/screens/franchise/widget/franchise_form_dialog.dart';
 import 'package:almawa_app/features/our_programs/screens/franchise/widget/franchise_reqirment_section.dart';
 import 'package:almawa_app/features/our_programs/screens/franchise/widget/service_card_franchise.dart';
@@ -32,7 +33,10 @@ class _FranchiseScreenState extends State<FranchiseScreen> {
                 ),
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),
@@ -89,7 +93,7 @@ class _FranchiseScreenState extends State<FranchiseScreen> {
             ),
             const SizedBox(height: 24),
 
-           Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Center(
                 child: SizedBox(
