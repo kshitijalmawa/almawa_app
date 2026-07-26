@@ -1,4 +1,5 @@
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/about/about_screen.dart';
 import 'package:almawa_app/features/career/widget/benifit_item_card.dart';
 import 'package:almawa_app/features/our_services/widget/call_to_action_button.dart';
@@ -11,7 +12,6 @@ class ITAndTechServicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
@@ -30,7 +30,10 @@ class ITAndTechServicesScreen extends StatelessWidget {
 
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),

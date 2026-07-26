@@ -1,4 +1,5 @@
 import 'package:almawa_app/features/our_programs/screens/franchise/widget/franchise_feature_card.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/our_programs/screens/referral_and_commission/widget/referral_form_dialog.dart';
 import 'package:almawa_app/features/our_programs/widget/process_step_item.dart';
 import 'package:almawa_app/features/our_programs/screens/referral_and_commission/widget/referral_feature_card.dart';
@@ -17,7 +18,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: const Color(0xFFF6F7F9),
+      backgroundColor: const Color(0xFFF6F7F9),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -33,7 +34,10 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
                 ),
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),
@@ -103,7 +107,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
                 child: SizedBox(
                   height: 48,
                   child: ElevatedButton(
-                     onPressed: () {
+                    onPressed: () {
                       showDialog(
                         context: context,
                         builder: (context) => const ReferralFormDialog(),
@@ -156,7 +160,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
               ),
             ),
             const SizedBox(height: 20),
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: const FranchiseFeatureCard(
                 icon: Icons.attach_money,
@@ -168,7 +172,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
             ),
             const SizedBox(height: 16),
 
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: const FranchiseFeatureCard(
                 icon: Icons.trending_up_outlined,
@@ -179,7 +183,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
               ),
             ),
             const SizedBox(height: 16),
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: const FranchiseFeatureCard(
                 icon: Icons.groups_outlined,
@@ -232,7 +236,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
               description:
                   "Receive your commission payout once the project is completed",
             ),
-             const SizedBox(height: 32),
+            const SizedBox(height: 32),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -282,7 +286,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
                 height: 48,
                 child: ElevatedButton(
                   onPressed: () {
-                     showDialog(
+                    showDialog(
                       context: context,
                       builder: (context) => const ReferralFormDialog(),
                     );
@@ -309,7 +313,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
               ),
             ),
             SizedBox(height: 32),
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: _buildSecondImageCard(),
             ),
@@ -326,7 +330,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
                 ),
               ),
             ),
-            SizedBox(height:20),
+            SizedBox(height: 20),
             Column(
               children: [
                 ReferralFeatureCard(
@@ -334,32 +338,30 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
                   title: "No Investment",
                   subtitle: "Start earning without any financial investment",
                 ),
-            
+
                 const SizedBox(height: 16),
-            
+
                 ReferralFeatureCard(
                   icon: Icons.track_changes,
                   title: "High Commission",
                   subtitle:
                       "Earn attractive commission on every successful referral",
                 ),
-            
+
                 const SizedBox(height: 16),
-            
+
                 ReferralFeatureCard(
                   icon: Icons.workspace_premium,
                   title: "Performance Bonuses",
-                  subtitle:
-                      "Additional bonuses for high-performing referrers",
+                  subtitle: "Additional bonuses for high-performing referrers",
                 ),
-            
+
                 const SizedBox(height: 16),
-            
+
                 ReferralFeatureCard(
                   icon: Icons.people_outline_outlined,
                   title: "Dedicated Support",
-                  subtitle:
-                      "Personal support to help you maximize referrals",
+                  subtitle: "Personal support to help you maximize referrals",
                 ),
                 const SizedBox(height: 32),
                 Padding(
@@ -376,7 +378,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
                 ),
                 const SizedBox(height: 20),
                 ReferralStatsSection(),
-                AppFooter()
+                AppFooter(),
               ],
             ),
           ],
@@ -385,6 +387,7 @@ class _ReferralAndCommissionState extends State<ReferralAndCommission> {
     );
   }
 }
+
 Widget _buildImageCard() {
   return Container(
     decoration: BoxDecoration(
@@ -406,6 +409,7 @@ Widget _buildImageCard() {
     ),
   );
 }
+
 Widget _buildSecondImageCard() {
   return Container(
     decoration: BoxDecoration(

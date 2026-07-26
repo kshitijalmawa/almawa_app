@@ -1,4 +1,5 @@
 import 'package:almawa_app/features/contact_us/widget/contact_from_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:almawa_app/features/contact_us/widget/reach_us_card.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,6 @@ class ContactUsScreen extends StatefulWidget {
 }
 
 class _ContactUsScreenState extends State<ContactUsScreen> {
-
   String? selectedCountry;
 
   Future<void> _openMap() async {
@@ -45,7 +45,10 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
 
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),
@@ -56,7 +59,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height:20),
+            SizedBox(height: 20),
             const Center(
               child: Text(
                 "CONTACT US",
@@ -197,8 +200,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
               lines: const [
                 "J, Signature Elite, Connekt Co-Working Office Spaces 4th Floor Above Westside Showroom, 7th Govind Marg, Narayan Singh Circle, Jaipur Rajasthan - 302004",
               ],
-              footerText:
-                  "Visit our Jaipur office",
+              footerText: "Visit our Jaipur office",
             ),
             SizedBox(height: 14),
             ReachUsCard(
@@ -216,4 +218,3 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
     );
   }
 }
-

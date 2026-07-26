@@ -1,4 +1,5 @@
 import 'package:almawa_app/shared/enquiry/dialog/enquiry_dialog.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
 void showEnquiryDialog(BuildContext context) {
@@ -27,7 +28,10 @@ class CloudSolutions extends StatelessWidget {
                 ),
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),
@@ -48,9 +52,9 @@ class CloudSolutions extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-        
+
               const SizedBox(height: 20),
-        
+
               const Text(
                 "Explore our Cloud Solutions offering.\n"
                 "Reach out to get a tailored plan for your business.",
@@ -60,9 +64,9 @@ class CloudSolutions extends StatelessWidget {
                   color: Colors.black54,
                 ),
               ),
-        
+
               const SizedBox(height: 40),
-        
+
               /// Send Enquiry Button
               SizedBox(
                 width: double.infinity,
@@ -89,9 +93,9 @@ class CloudSolutions extends StatelessWidget {
                   ),
                 ),
               ),
-        
+
               const SizedBox(height: 16),
-        
+
               /// Back to Services Button
               SizedBox(
                 width: double.infinity,

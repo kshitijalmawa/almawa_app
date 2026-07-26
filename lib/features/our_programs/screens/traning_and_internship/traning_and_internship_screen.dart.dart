@@ -1,4 +1,5 @@
 import 'package:almawa_app/features/our_programs/model/program_details.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/our_programs/screens/traning_and_internship/program_details_screen.dart';
 import 'package:almawa_app/features/our_programs/services/our_programs_service.dart';
 import 'package:almawa_app/features/our_programs/screens/traning_and_internship/widget/apply_from_dialog.dart';
@@ -17,10 +18,12 @@ class TraningAndInternshipScreen extends StatefulWidget {
   const TraningAndInternshipScreen({super.key, required this.jobTitle});
 
   @override
-  State<TraningAndInternshipScreen> createState() => _TraningAndInternshipScreenState();
+  State<TraningAndInternshipScreen> createState() =>
+      _TraningAndInternshipScreenState();
 }
 
-class _TraningAndInternshipScreenState extends State<TraningAndInternshipScreen> {
+class _TraningAndInternshipScreenState
+    extends State<TraningAndInternshipScreen> {
   late Future<List<ProgramModel>> _programsFuture;
   final GlobalKey _coursesKey = GlobalKey();
 
@@ -29,6 +32,7 @@ class _TraningAndInternshipScreenState extends State<TraningAndInternshipScreen>
     super.initState();
     _programsFuture = ProgramService.getAllPrograms();
   }
+
   void _scrollToCourses() {
     final context = _coursesKey.currentContext;
     if (context != null) {
@@ -59,7 +63,10 @@ class _TraningAndInternshipScreenState extends State<TraningAndInternshipScreen>
                 ),
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset(
+                  'assets/images/newlogo.svg',
+                  height: 48,
+                ),
               ),
             ],
           ),
@@ -162,7 +169,7 @@ class _TraningAndInternshipScreenState extends State<TraningAndInternshipScreen>
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                onPressed: () {
+                  onPressed: () {
                     showDialog(
                       context: context,
                       barrierDismissible: true,
@@ -348,9 +355,10 @@ class _TraningAndInternshipScreenState extends State<TraningAndInternshipScreen>
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (_) => ProgramDetailsScreen(
-                                              program: data,
-                                            ),
+                                            builder: (_) =>
+                                                ProgramDetailsScreen(
+                                                  program: data,
+                                                ),
                                           ),
                                         );
                                       }

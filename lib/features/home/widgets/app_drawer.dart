@@ -3,6 +3,7 @@ import 'package:almawa_app/features/our_programs/screens/franchise/franchise_scr
 import 'package:almawa_app/features/our_programs/screens/referral_and_commission/referral_and_commission.dart';
 import 'package:almawa_app/features/our_programs/screens/traning_and_internship/traning_and_internship_screen.dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../about/about_screen.dart';
 import '../../career/careers_screen.dart';
 import '../../our_work/demo_websites_screen.dart';
@@ -26,7 +27,11 @@ class AppDrawer extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
               child: Row(
                 children: [
-                  Image.asset("assets/images/logoblack.png", height: 45),
+                  SvgPicture.asset(
+                    'assets/images/newlogo.svg',
+                    height: 55,
+                    fit: BoxFit.contain,
+                  ),
                   const Spacer(),
                   IconButton(
                     icon: const Icon(Icons.close, color: Colors.black87),
@@ -135,7 +140,9 @@ class AppDrawer extends StatelessWidget {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (_) => FranchiseScreen()),
+                                MaterialPageRoute(
+                                  builder: (_) => FranchiseScreen(),
+                                ),
                               );
                             },
                           ),
@@ -145,7 +152,9 @@ class AppDrawer extends StatelessWidget {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (_) => ReferralAndCommission()),
+                                MaterialPageRoute(
+                                  builder: (_) => ReferralAndCommission(),
+                                ),
                               );
                             },
                           ),
@@ -155,7 +164,11 @@ class AppDrawer extends StatelessWidget {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (_) => TraningAndInternshipScreen(jobTitle: 'Training & Internship')),
+                                MaterialPageRoute(
+                                  builder: (_) => TraningAndInternshipScreen(
+                                    jobTitle: 'Training & Internship',
+                                  ),
+                                ),
                               );
                             },
                           ),
@@ -300,7 +313,7 @@ class AppDrawer extends StatelessWidget {
                   ),
                 ),
               ),
-            ),    
+            ),
           ],
         ),
       ),

@@ -10,6 +10,7 @@ import 'package:almawa_app/features/home/widgets/app_drawer.dart';
 import 'package:almawa_app/features/home/widgets/desk_voice_card.dart';
 import 'package:almawa_app/features/home/widgets/service_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -79,8 +80,8 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20), // left spacing
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Image.asset(
-                'assets/images/logoblack.png',
+              child: SvgPicture.asset(
+                'assets/images/newlogo.svg',
                 height: 50,
                 fit: BoxFit.contain,
               ),
@@ -210,7 +211,7 @@ class HomeScreen extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(14),
                         child: AspectRatio(
-                          aspectRatio: 16 / 9, 
+                          aspectRatio: 16 / 9,
                           child: Image.asset(
                             "assets/images/our_mission.jpg",
                             width: double.infinity,

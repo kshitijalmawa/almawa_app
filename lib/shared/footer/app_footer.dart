@@ -1,4 +1,6 @@
+import 'package:almawa_app/shared/footer/terms_&_condition.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,14 +24,14 @@ class AppFooter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 10, top: 10),
+            padding: const EdgeInsets.only(left: 20, top: 20),
             child: ClipRect(
               child: Align(
                 alignment: Alignment.topLeft, // ✅ LEFT ALIGN
-                heightFactor: 0.8,
-                child: Image.asset(
-                  "assets/images/logowhite.png",
-                  height: 150,
+                heightFactor: 1.2,
+                child: SvgPicture.asset(
+                  "assets/images/footer_logo.svg",
+                  height: 70,
                   fit: BoxFit.contain,
                 ),
               ),
@@ -185,14 +187,26 @@ class AppFooter extends StatelessWidget {
 
                 const SizedBox(height: 8),
 
-                const Text(
-                  "Terms & CondSitions / Policy",
-                  style: TextStyle(color: Colors.white70),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TermsAndConditionScreen(),
+                      ),
+                    );
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 4.0),
+                    child: Text(
+                      "Terms & Conditions / Policy",
+                      style: TextStyle(color: Colors.white70),
+                    ),
+                  ),
                 ),
-
                 const SizedBox(height: 24),
 
-                Row(
+                Wrap(
                   children: [
                     IconButton(
                       onPressed: () {
@@ -243,7 +257,7 @@ class AppFooter extends StatelessWidget {
                         size: 26,
                       ),
                     ),
-                     const SizedBox(width: 18),
+                    const SizedBox(width: 18),
                     IconButton(
                       onPressed: () {
                         launchURL(

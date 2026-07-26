@@ -1,4 +1,5 @@
 import 'package:almawa_app/features/testimonials/model/review_model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/testimonials/services/review_service.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,6 @@ class Testimonials extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7F9),
 
@@ -31,7 +30,7 @@ class Testimonials extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                 ),
 
-              Image.asset("assets/images/logoblack.png", height: 45),
+              SvgPicture.asset("assets/images/newlogo.svg", height: 45),
             ],
           ),
         ),
@@ -241,7 +240,7 @@ class Testimonials extends StatelessWidget {
                 ],
               ),
             ),
-           const AppFooter(),
+            const AppFooter(),
           ],
         ),
       ),
