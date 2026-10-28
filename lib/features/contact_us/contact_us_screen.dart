@@ -1,6 +1,7 @@
 import 'package:almawa_app/features/contact_us/widget/contact_from_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:almawa_app/features/contact_us/widget/reach_us_card.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -46,7 +47,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
                 child: SvgPicture.asset(
-                  'assets/images/app_logo.svg',
+                  SharedImages.alMawaLogo,
                   height: 48,
                 ),
               ),

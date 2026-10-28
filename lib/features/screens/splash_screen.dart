@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/home/festive_banners/service/festive_banner_service.dart';
 import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,6 +20,11 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
+    // Preload festive banner data & images during the splash animation
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      FestiveBannerService.preloadBanners(context);
+    });
+
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
@@ -35,10 +41,12 @@ class _SplashScreenState extends State<SplashScreen>
 
     // ✅ Navigate after 4 seconds
     Future.delayed(const Duration(seconds: 4), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      }
     });
   }
 

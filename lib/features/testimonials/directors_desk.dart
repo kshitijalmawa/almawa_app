@@ -1,6 +1,7 @@
 import 'package:almawa_app/features/testimonials/widget/director_feedback_form.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 
 class DirectorsDesk extends StatefulWidget {
@@ -29,7 +30,7 @@ class _DirectorsDeskState extends State<DirectorsDesk> {
                   icon: const Icon(Icons.arrow_back_ios, color: Colors.black87),
                   onPressed: () => Navigator.pop(context),
                 ),
-              SvgPicture.asset("assets/images/app_logo.svg", height: 45),
+              SvgPicture.asset(SharedImages.alMawaLogo, height: 45),
             ],
           ),
         ),

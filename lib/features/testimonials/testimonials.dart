@@ -2,6 +2,7 @@ import 'package:almawa_app/features/testimonials/model/review_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/testimonials/services/review_service.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 
 class Testimonials extends StatelessWidget {
@@ -30,7 +31,7 @@ class Testimonials extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                 ),
 
-              SvgPicture.asset("assets/images/app_logo.svg", height: 45),
+              SvgPicture.asset(SharedImages.alMawaLogo, height: 45),
             ],
           ),
         ),

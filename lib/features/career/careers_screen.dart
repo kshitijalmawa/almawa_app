@@ -1,4 +1,5 @@
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:almawa_app/shared/widget/benefit_card.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/career/widget/faq_tile.dart';
@@ -233,7 +234,7 @@ class _CareersScreenState extends State<CareersScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
                 child: SvgPicture.asset(
-                  'assets/images/app_logo.svg',
+                  SharedImages.alMawaLogo,
                   height: 48,
                 ),
               ),

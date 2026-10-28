@@ -2,6 +2,7 @@ import 'package:almawa_app/features/contact_us/contact_us_screen.dart';
 import 'package:almawa_app/features/our_programs/screens/franchise/franchise_screen.dart';
 import 'package:almawa_app/features/our_programs/screens/referral_and_commission/referral_and_commission.dart';
 import 'package:almawa_app/features/our_programs/screens/traning_and_internship/traning_and_internship_screen.dart.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../about/about_screen.dart';
@@ -28,7 +29,7 @@ class AppDrawer extends StatelessWidget {
               child: Row(
                 children: [
                   SvgPicture.asset(
-                    'assets/images/app_logo.svg',
+                    SharedImages.alMawaLogo,
                     height: 55,
                     fit: BoxFit.contain,
                   ),

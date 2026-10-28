@@ -2,6 +2,7 @@ import 'package:almawa_app/features/contact_us/contact_us_screen.dart';
 import 'package:almawa_app/features/our_programs/model/program_details.dart';
 import 'package:almawa_app/features/our_programs/widget/scrolling_strip.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -34,7 +35,7 @@ class _ProgramDetailsScreenState extends State<ProgramDetailsScreen> {
                 ),
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: SvgPicture.asset('assets/images/app_logo.svg', height: 48),
+                child: SvgPicture.asset(SharedImages.alMawaLogo, height: 48),
               ),
             ],
           ),

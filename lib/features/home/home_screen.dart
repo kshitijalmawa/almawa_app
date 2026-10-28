@@ -1,3 +1,4 @@
+import 'package:almawa_app/features/home/festive_banners/festive_banner.dart';
 import 'package:almawa_app/features/home/widgets/changing_word.dart';
 import 'package:almawa_app/features/our_services/cloud_solutions.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
@@ -9,6 +10,7 @@ import 'package:almawa_app/features/our_services/web_devlopment_screen.dart';
 import 'package:almawa_app/features/home/widgets/app_drawer.dart';
 import 'package:almawa_app/features/home/widgets/desk_voice_card.dart';
 import 'package:almawa_app/features/home/widgets/service_card_widget.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -81,7 +83,7 @@ class HomeScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: SvgPicture.asset(
-                'assets/images/app_logo.svg',
+                SharedImages.alMawaLogo,
                 height: 50,
                 fit: BoxFit.contain,
               ),
@@ -108,20 +110,29 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 24),
+              const SizedBox(height: 14),
+              const FestiveBannerWidget(),
+              const SizedBox(height: 10),
               RichText(
                 textAlign: TextAlign.center,
-                text: TextSpan(
-                  style: const TextStyle(
+                text: const TextSpan(
+                  style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w900,
                     color: Colors.black,
                     height: 1.2,
                   ),
-                  children: const [
+                  children: [
                     TextSpan(
-                      text: "TRY. TRUST.\nTRANSFORM",
+                      text: "TRY. TRUST.\nTRANSFO",
                       style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    TextSpan(
+                      text: "RM.",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF0E4A68),
+                      ),
                     ),
                   ],
                 ),
