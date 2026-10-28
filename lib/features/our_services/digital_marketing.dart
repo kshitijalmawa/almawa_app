@@ -32,7 +32,7 @@ class DigitalMarketing extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
                 child: SvgPicture.asset(
-                  'assets/images/newlogo.svg',
+                  'assets/images/app_logo.svg',
                   height: 48,
                 ),
               ),
