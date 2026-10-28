@@ -29,7 +29,7 @@ class _DirectorsDeskState extends State<DirectorsDesk> {
                   icon: const Icon(Icons.arrow_back_ios, color: Colors.black87),
                   onPressed: () => Navigator.pop(context),
                 ),
-              SvgPicture.asset("assets/images/newlogo.svg", height: 45),
+              SvgPicture.asset("assets/images/app_logo.svg", height: 45),
             ],
           ),
         ),

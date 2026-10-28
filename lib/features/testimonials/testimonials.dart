@@ -30,7 +30,7 @@ class Testimonials extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                 ),
 
-              SvgPicture.asset("assets/images/newlogo.svg", height: 45),
+              SvgPicture.asset("assets/images/app_logo.svg", height: 45),
             ],
           ),
         ),

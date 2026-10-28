@@ -1,4 +1,5 @@
 import 'package:almawa_app/shared/footer/terms_&_condition.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,7 +20,7 @@ class AppFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.black,
+      color: Color(0xFFEDFBFE),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,10 +28,10 @@ class AppFooter extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20, top: 20),
             child: ClipRect(
               child: Align(
-                alignment: Alignment.topLeft, // ✅ LEFT ALIGN
+                alignment: Alignment.topLeft,
                 heightFactor: 1.2,
                 child: SvgPicture.asset(
-                  "assets/images/footer_logo.svg",
+                  SharedImages.alMawaLogo,
                   height: 70,
                   fit: BoxFit.contain,
                 ),
@@ -41,11 +42,7 @@ class AppFooter extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
               "Delivering next-generation digital solutions that\ntransform ideas into measurable results.",
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
-                height: 1.6,
-              ),
+              style: TextStyle(color: Colors.black, fontSize: 14, height: 1.6),
             ),
           ),
 
@@ -56,7 +53,7 @@ class AppFooter extends StatelessWidget {
             child: Text(
               "CONTACT INFO",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1.2,
@@ -75,11 +72,11 @@ class AppFooter extends StatelessWidget {
               },
               child: Row(
                 children: const [
-                  Icon(Icons.email_outlined, color: Colors.white70, size: 20),
+                  Icon(Icons.email_outlined, color: Colors.black, size: 20),
                   SizedBox(width: 12),
                   Text(
                     "business@al-mawa.international",
-                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                    style: TextStyle(color: Colors.black, fontSize: 14),
                   ),
                 ],
               ),
@@ -97,11 +94,11 @@ class AppFooter extends StatelessWidget {
               },
               child: Row(
                 children: const [
-                  Icon(Icons.phone_outlined, color: Colors.white70, size: 20),
+                  Icon(Icons.phone_outlined, color: Colors.black, size: 20),
                   SizedBox(width: 12),
                   Text(
                     "+91 9561179693 | 9511991736",
-                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                    style: TextStyle(color: Colors.black, fontSize: 14),
                   ),
                 ],
               ),
@@ -123,50 +120,22 @@ class AppFooter extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.location_on_outlined,
-                    color: Colors.white70,
+                    color: Colors.black,
                     size: 20,
                   ),
                   SizedBox(width: 12),
                   Expanded(
                     child: Text(
                       "AL-MAWA INTERNATIONAL PUNE Location",
-                      style: TextStyle(color: Colors.white70, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 14),
                     ),
                   ),
                 ],
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 32),
-            child: GestureDetector(
-              onTap: () {
-                launchURL(
-                  "https://www.google.com/maps/place/Connekt+-+Coworking+Space+in+Tonk+Road,+Jaipur/@26.8991882,75.8142119,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgIDLm72aFA!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHVAweq_aZ2I4h_rRh6zk-z6JqyDf_bKnmiPRnk8QVp1V1mlBek-UA4W0rK-SFsELkT2NQlVdG9YTyJ4e0EgCI5B0tQeRn-LDn98A5khN3YbQtqYtpiu1KXDsgMRvSwnF0Bf8ur2J2FT%3Dw152-h86-k-no!7i7680!8i4320!4m7!3m6!1s0x396db716a010b2cd:0x3e2290de8ca9e00f!8m2!3d26.8993959!4d75.8143621!10e5!16s%2Fg%2F11y3lncpy1?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D",
-                );
-              },
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Icon(
-                    Icons.location_on_outlined,
-                    color: Colors.white70,
-                    size: 20,
-                  ),
-                  SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      "AL-MAWA INTERNATIONAL JAIPUR Location",
-                      style: TextStyle(color: Colors.white70, fontSize: 14),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Divider(color: Colors.white24),
+          Divider(color: Colors.black),
 
-          /// Bottom Section Padding
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
@@ -175,7 +144,7 @@ class AppFooter extends StatelessWidget {
                 const Text(
                   "© 2026 AI Mawa International. All rights reserved.",
                   style: TextStyle(
-                    color: Colors.white70,
+                    color: Colors.black,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
@@ -183,7 +152,7 @@ class AppFooter extends StatelessWidget {
 
                 const SizedBox(height: 16),
 
-                const Text("Our Work", style: TextStyle(color: Colors.white70)),
+                const Text("Our Work", style: TextStyle(color: Colors.black)),
 
                 const SizedBox(height: 8),
 
@@ -200,7 +169,7 @@ class AppFooter extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 4.0),
                     child: Text(
                       "Terms & Conditions / Policy",
-                      style: TextStyle(color: Colors.white70),
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -214,7 +183,7 @@ class AppFooter extends StatelessWidget {
                       },
                       icon: const FaIcon(
                         FontAwesomeIcons.xTwitter,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 26,
                       ),
                     ),
@@ -227,7 +196,7 @@ class AppFooter extends StatelessWidget {
                       },
                       icon: const FaIcon(
                         FontAwesomeIcons.linkedinIn,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 26,
                       ),
                     ),
@@ -240,7 +209,7 @@ class AppFooter extends StatelessWidget {
                       },
                       icon: const FaIcon(
                         FontAwesomeIcons.instagram,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 26,
                       ),
                     ),
@@ -253,7 +222,7 @@ class AppFooter extends StatelessWidget {
                       },
                       icon: const FaIcon(
                         FontAwesomeIcons.youtube,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 26,
                       ),
                     ),
@@ -266,7 +235,7 @@ class AppFooter extends StatelessWidget {
                       },
                       icon: const FaIcon(
                         FontAwesomeIcons.facebook,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 26,
                       ),
                     ),

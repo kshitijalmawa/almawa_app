@@ -4,6 +4,7 @@ import 'package:almawa_app/features/our_programs/screens/franchise/widget/franch
 import 'package:almawa_app/features/our_programs/screens/franchise/widget/service_card_franchise.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class FranchiseScreen extends StatefulWidget {
   const FranchiseScreen({super.key});
@@ -32,7 +33,7 @@ class _FranchiseScreenState extends State<FranchiseScreen> {
                 ),
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
-                child: Image.asset('assets/images/logoblack.png', height: 48),
+                child: SvgPicture.asset('assets/images/app_logo.svg', height: 48),
               ),
             ],
           ),

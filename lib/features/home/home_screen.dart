@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: SvgPicture.asset(
-                'assets/images/newlogo.svg',
+                'assets/images/app_logo.svg',
                 height: 50,
                 fit: BoxFit.contain,
               ),

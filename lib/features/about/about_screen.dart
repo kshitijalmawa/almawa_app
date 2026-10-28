@@ -1,4 +1,3 @@
-import 'package:almawa_app/features/about/widget/jaipur_branch_section.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +26,7 @@ class AboutScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
                 child: SvgPicture.asset(
-                  'assets/images/newlogo.svg',
+                  'assets/images/app_logo.svg',
                   height: 48,
                 ),
               ),
@@ -245,479 +244,6 @@ class AboutScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.grey.shade600, fontSize: 18),
               ),
             ),
-            SizedBox(height: 40),
-            Text(
-              "DEVELOPMENT \nTEAM",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w800,
-                color: Colors.black87,
-              ),
-            ),
-            SizedBox(height: 24),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/shashant.png",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            // assets/images/shashant.png
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Shashant Pandey",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_01",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 32),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/kshitij.webp",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Kshitij Hapase",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_02",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 32),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/Pawan.webp",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Pawan Wagh",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_03",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 32),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/Tushar.webp",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Tushar Kumar",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_04",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 32),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/shri.jpeg",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Shrihari Surve",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_05",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Divider(height: 50),
-            Text(
-              "Sales & Marketing \nTEAM",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w800,
-                color: Colors.black87,
-              ),
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/omkar.webp",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Omkar Bachanatti",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_01",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/Sanika.webp",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Sanika Chougule",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_02",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Divider(height: 50),
-            Text(
-              "Graphics Designer & \n Digital Marketing",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w800,
-                color: Colors.black87,
-              ),
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/paras.webp",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            // assets/images/vaibhav.jpg.jpeg
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Paras Gupta",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_01",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Divider(height: 50),
-            Text(
-              "Management \nTEAM",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w800,
-                color: Colors.black87,
-              ),
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/kaushal.jpeg",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            //assets/images/kaushal.jpeg
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Kaushal Marathe",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_01",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Image.asset(
-                    "assets/images/dilip.jpg.jpeg",
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 6),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 24),
-                  child: Text(
-                    "Dilip Khandagale",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 24),
-                  child: Text(
-                    "_02",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ],
-            ),
             Divider(height: 50),
             Text(
               "Hr & Management",
@@ -814,8 +340,471 @@ class AboutScreen extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Manasi.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Manasi Patil",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_03",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Divider(height: 50),
+            Text(
+              "Sales & Marketing \nTEAM",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Dilip.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Dilip Khandagale",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_01",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Kaushal.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Kaushal Marathe",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_02",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Sahil.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Sahil Pacharne",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_03",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Mubarak.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Mubarak Hussain",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_04",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+            Divider(height: 50),
+            Text(
+              "DEVELOPMENT \nTEAM",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(height: 24),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/kshitij.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Kshitij Hapase",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_01",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 32),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Tushar.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Tushar Kumar",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_02",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 32),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Sameer.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Sameer Pise",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_03",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 32),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Pallavi.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Pallavi",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_04",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 32),
+            Divider(height: 50),
+            Text(
+              "Graphics Designer & \n Digital Marketing",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+                color: Colors.black87,
+              ),
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Image.asset(
+                    "assets/images/Utkarsh.webp",
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            // assets/images/vaibhav.jpg.jpeg
+            SizedBox(height: 6),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Text(
+                    "Utkarsh Ratnakar",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24),
+                  child: Text(
+                    "_01",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(height: 24),
-            const JaipurBranchSection(),
+            // const JaipurBranchSection(),
             const SizedBox(height: 24),
             const AppFooter(),
           ],

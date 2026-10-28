@@ -28,7 +28,7 @@ class AppDrawer extends StatelessWidget {
               child: Row(
                 children: [
                   SvgPicture.asset(
-                    'assets/images/newlogo.svg',
+                    'assets/images/app_logo.svg',
                     height: 55,
                     fit: BoxFit.contain,
                   ),
