@@ -1,4 +1,5 @@
 import 'package:almawa_app/shared/footer/app_footer.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:almawa_app/features/our_work/widget/card_widget.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class OurWorkScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
                 child: SvgPicture.asset(
-                  'assets/images/app_logo.svg',
+                  SharedImages.alMawaLogo,
                   height: 48,
                 ),
               ),

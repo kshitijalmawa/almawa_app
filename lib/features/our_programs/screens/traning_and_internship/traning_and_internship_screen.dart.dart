@@ -10,6 +10,7 @@ import 'package:almawa_app/features/our_programs/widget/process_step_item.dart';
 import 'package:almawa_app/features/our_programs/widget/scrolling_strip.dart';
 import 'package:almawa_app/features/our_programs/widget/stats_section.dart';
 import 'package:almawa_app/features/our_programs/widget/testimonial_card.dart';
+import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:almawa_app/shared/footer/app_footer.dart';
 import 'package:flutter/material.dart';
 
@@ -64,7 +65,7 @@ class _TraningAndInternshipScreenState
               Padding(
                 padding: const EdgeInsets.only(left: 2.0),
                 child: SvgPicture.asset(
-                  'assets/images/app_logo.svg',
+                  SharedImages.alMawaLogo,
                   height: 48,
                 ),
               ),
