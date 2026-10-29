@@ -5,6 +5,7 @@ import 'package:almawa_app/features/our_programs/screens/traning_and_internship/
 import 'package:almawa_app/shared/images/shared_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../about/about_screen.dart';
 import '../../career/careers_screen.dart';
 import '../../our_work/demo_websites_screen.dart';
@@ -231,64 +232,77 @@ class AppDrawer extends StatelessWidget {
                             const Divider(color: Colors.black12),
                             const SizedBox(height: 16),
 
-                            Container(
-                              width: double.infinity,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 14,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade100,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: const Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Language",
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.black54,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6),
-                                  Text(
-                                    "English",
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-
-                            const SizedBox(height: 14),
-
                             SizedBox(
                               width: double.infinity,
-                              child: OutlinedButton(
-                                style: OutlinedButton.styleFrom(
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFF3851FF),
+                                  foregroundColor: Colors.white,
+                                  elevation: 0,
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 14,
                                   ),
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  Navigator.pop(context);
+                                  final uri = Uri.parse(
+                                    "https://www.al-mawa.international/referral",
+                                  );
+                                  if (!await launchUrl(
+                                    uri,
+                                    mode: LaunchMode.inAppBrowserView,
+                                    browserConfiguration:
+                                        const BrowserConfiguration(
+                                      showTitle: true,
+                                    ),
+                                  )) {
+                                    debugPrint("Could not launch $uri");
+                                  }
+                                },
+                                child: const Text(
+                                  "Refer & Earn 🎁",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(height: 12),
+
+                            SizedBox(
+                              width: double.infinity,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFFEFF1F4),
+                                  foregroundColor: Colors.black87,
+                                  elevation: 0,
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 14,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
                                   ),
                                 ),
                                 onPressed: () {
+                                  Navigator.pop(context);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => ContactUsScreen(),
+                                      builder: (context) =>
+                                          const ContactUsScreen(),
                                     ),
                                   );
                                 },
                                 child: const Text(
                                   "Contact Us",
                                   style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
                                     color: Colors.black87,
                                   ),
                                 ),
