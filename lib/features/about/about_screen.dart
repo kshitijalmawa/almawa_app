@@ -111,7 +111,7 @@ class AboutScreen extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 16 / 9, // Perfect for section/banner images
                   child: Image.asset(
-                    "assets/images/the_way_we_work.jpg",
+                    "assets/images/The Way We Work.avif",
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -148,7 +148,7 @@ class AboutScreen extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 16 / 9, // Perfect for section/banner images
                   child: Image.asset(
-                    "assets/images/why_choose_us.jpg",
+                    "assets/images/why-choose-us-.jpg.jpeg",
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -185,7 +185,7 @@ class AboutScreen extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 16 / 9, // Perfect for section/banner images
                   child: Image.asset(
-                    "assets/images/stand_for.png",
+                    "assets/images/what we stand for.avif",
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),

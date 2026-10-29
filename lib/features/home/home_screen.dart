@@ -11,6 +11,7 @@ import 'package:almawa_app/features/home/widgets/app_drawer.dart';
 import 'package:almawa_app/features/home/widgets/desk_voice_card.dart';
 import 'package:almawa_app/features/home/widgets/service_card_widget.dart';
 import 'package:almawa_app/shared/images/shared_images.dart';
+import 'package:almawa_app/features/home/upcomming_branches/upcomming_branches_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -224,7 +225,7 @@ class HomeScreen extends StatelessWidget {
                         child: AspectRatio(
                           aspectRatio: 16 / 9,
                           child: Image.asset(
-                            "assets/images/our_mission.jpg",
+                            "assets/images/our mission.avif",
                             width: double.infinity,
                             fit: BoxFit.cover,
                           ),
@@ -278,7 +279,7 @@ class HomeScreen extends StatelessWidget {
                         child: AspectRatio(
                           aspectRatio: 16 / 9, // good for banner-style images
                           child: Image.asset(
-                            "assets/images/our_values2.jpg",
+                            "assets/images/our values.webp",
                             width: double.infinity,
                             fit: BoxFit.cover,
                           ),
@@ -499,6 +500,9 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
+              const SizedBox(height: 36),
+              const UpcomingBranchesWidget(),
 
               const SizedBox(height: 80),
               const AppFooter(),
